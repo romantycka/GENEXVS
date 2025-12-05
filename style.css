@@ -576,6 +576,13 @@ footer {
     width: 70%;
 }
 
+@media (max-width: 768px) {
+    .page-contacts .contact-form-wide {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
 .contact-form-grid {
     display: grid;
     gap: 1rem;
