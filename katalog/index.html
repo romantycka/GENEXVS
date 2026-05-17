@@ -483,7 +483,8 @@ main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
   position: absolute;
   bottom: calc(100% + 12px);
   left: 50%;
-  transform: translateX(-50%) translateY(6px);
+  /* --tip-shift nastaví JS, když bublina vytéká za okraj displeje */
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(6px);
   background: var(--genex-blue);
   color: #fff;
   padding: 10px 14px;
@@ -506,22 +507,28 @@ main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
   content: '';
   position: absolute;
   top: 100%;
-  left: 50%;
+  /* Šipka kompenzuje --tip-shift, takže pořád ukazuje na slovo */
+  left: calc(50% - var(--tip-shift, 0px));
   transform: translateX(-50%);
   border: 7px solid transparent;
   border-top-color: var(--genex-blue);
 }
+/* Open: hover (desktop), focus-within (klávesnice), .open (tap toggle z JS) */
 .brand-tip:hover .tip-bubble,
-.brand-tip:focus-within .tip-bubble {
+.brand-tip:focus-within .tip-bubble,
+.brand-tip.open .tip-bubble {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(0);
 }
 
-/* Mobile fallback — na úzkých displejích posunout bublinu doleva,
-   aby nevytékala vpravo */
+/* Mobile fallback — na úzkých displejích zúžit, JS dopočítá posun */
 @media (max-width: 720px) {
-  .tip-bubble { max-width: calc(100vw - 32px); }
+  .tip-bubble {
+    max-width: min(240px, calc(100vw - 32px));
+    font-size: 11.5px;
+    padding: 9px 12px;
+  }
 }
 
 /* ===== BACK TO TOP ===== */
@@ -2183,6 +2190,70 @@ lightbox.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
 });
+
+// TOOLTIP — tap-toggle + clamp bubliny do viewportu (CSS centrované,
+// ale když je trigger u okraje, bublina vytéká → JS dopočítá --tip-shift)
+const brandTips = document.querySelectorAll('.brand-tip');
+
+function clampTipBubble(tip) {
+  const bubble = tip.querySelector('.tip-bubble');
+  if (!bubble) return;
+  bubble.style.setProperty('--tip-shift', '0px');
+  // počkáme na layout, pak změříme
+  requestAnimationFrame(() => {
+    const rect = bubble.getBoundingClientRect();
+    const margin = 8;
+    let shift = 0;
+    if (rect.right > window.innerWidth - margin) {
+      shift = -(rect.right - (window.innerWidth - margin));
+    } else if (rect.left < margin) {
+      shift = margin - rect.left;
+    }
+    bubble.style.setProperty('--tip-shift', shift + 'px');
+  });
+}
+
+const closeAllTips = () => brandTips.forEach(t => {
+  t.classList.remove('open');
+  const b = t.querySelector('.tip-bubble');
+  if (b) b.style.removeProperty('--tip-shift');
+  if (document.activeElement === t) t.blur();
+});
+
+brandTips.forEach(tip => {
+  tip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const wasOpen = tip.classList.contains('open');
+    closeAllTips();
+    if (!wasOpen) {
+      tip.classList.add('open');
+      clampTipBubble(tip);
+    }
+  });
+  // Hover na desktopu — clamp taky, kdyby trigger byl u okraje
+  tip.addEventListener('mouseenter', () => clampTipBubble(tip));
+  tip.addEventListener('focus', () => clampTipBubble(tip));
+});
+
+// Tap mimo libovolnou bublinu ji zavře
+document.addEventListener('click', closeAllTips);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAllTips();
+});
+
+// Po resize/scroll přepočítej otevřenou bublinu
+let tipReclampScheduled = false;
+function reclampOpenTip() {
+  if (tipReclampScheduled) return;
+  tipReclampScheduled = true;
+  requestAnimationFrame(() => {
+    tipReclampScheduled = false;
+    const openTip = document.querySelector('.brand-tip.open');
+    if (openTip) clampTipBubble(openTip);
+  });
+}
+window.addEventListener('resize', reclampOpenTip);
+window.addEventListener('scroll', reclampOpenTip, { passive: true });
 </script>
 
 </body>
