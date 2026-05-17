@@ -487,17 +487,7 @@ footer {
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.7;
-    transition: all 0.3s ease;
-}
-
-.marquee-logo {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.5s ease;
-    /* Slower transition for smoother effect */
 }
 
 .marquee-logo.active-color {
@@ -551,10 +541,6 @@ footer {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
-}
-
-.mt-2 {
-    margin-top: 2rem;
 }
 
 .text-sm {
@@ -891,8 +877,45 @@ main {
     color: #ffffff !important;
 }
 
+.text-secondary {
+    color: var(--text-secondary);
+}
+
 .underline {
     text-decoration: underline !important;
+}
+
+/* Tailwind-like utility classy (zasady-ochrany-soukromi.html) */
+.bg-white {
+    background-color: #ffffff;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.rounded {
+    border-radius: 8px;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.list-disc {
+    list-style: disc;
+}
+
+.pl-1 {
+    padding-left: 1.5rem;
+}
+
+.mt-10 {
+    margin-top: 10rem;
 }
 
 /* Specific Footer Link Styling */

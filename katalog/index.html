@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katalog Metaltex — Genex VS</title>
+<meta name="description" content="Katalog produktů Metaltex — odkapávače, regály, závěsné systémy. Distribuce GENEX VS, s.r.o.">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand-red: #DC1E2C;
+  --genex-blue: #1F2A5A;
+  --accent: #3B4673;
+  --bg: #f6f7f9;
+  --bg-card: #ffffff;
+  --text: #1a1814;
+  --text-soft: #6a5f50;
+  --text-mute: #a09888;
+  --border: #e8e6e3;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ===== HEADER (sjednocený se stávajícím webem GENEX VS) ===== */
+header {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000066;
+  letter-spacing: -0.03em;
+  z-index: 1001;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+header .logo-img { height: 50px; width: auto; display: block; }
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0; padding: 0;
+}
+header nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+header nav a:hover,
+header nav a.active { color: #000066; }
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+.mobile-menu-btn span {
+  display: block;
+  width: 25px; height: 3px;
+  background-color: #1a1a1a;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block; }
+  header nav {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 100%; height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+  header nav.active { right: 0; }
+  header nav ul { flex-direction: column; align-items: center; gap: 2rem; }
+  header nav a { font-size: 1.5rem; }
+  .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+}
+
+/* Odsazení obsahu pod fixní header */
+body { padding-top: 80px; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 64px 24px 32px;
+  max-width: 880px; margin: 0 auto;
+  text-align: center;
+}
+.hero-logo {
+  height: 72px; width: auto;
+  display: block; margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(220,30,44,0.18);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.hero-subtitle {
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: var(--text-soft);
+  max-width: 640px; margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.hero-subtitle strong { color: var(--genex-blue); font-weight: 600; }
+
+/* Tlačítka */
+.btn-primary, .btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--genex-blue);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(31,42,90,0.25);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31,42,90,0.32);
+}
+.btn-primary[aria-expanded="true"] .btn-arrow {
+  transform: rotate(180deg);
+}
+.btn-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--genex-blue);
+  border: 1px solid var(--genex-blue);
+}
+.btn-secondary:hover {
+  background: var(--genex-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== ABOUT — rozbalitelná sekce ===== */
+.about {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 24px;
+  /* Klíč pro plynulé rozbalení: max-height + transition */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, padding 0.5s ease;
+  scroll-margin-top: 90px;
+}
+.about.open {
+  max-height: 4000px;   /* dostatečně velký */
+  opacity: 1;
+  padding: 32px 24px 24px;
+}
+.about-inner {
+  background: linear-gradient(135deg, #f8f9fc 0%, #eef0f5 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .about-inner { grid-template-columns: 1.2fr 1fr; padding: 56px; }
+}
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  color: var(--genex-blue);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.about-text strong { color: var(--brand-red); font-weight: 600; }
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+.about-slides {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.about-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.slides-grid {
+  /* Slidy vertikálně pod sebou — velké, plně čitelné */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.slide {
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.slide:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.slide-img {
+  width: 100%; height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.slide:hover .slide-img { transform: scale(1.03); }
+.about-back {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 16px;
+}
+
+/* ===== BANNER mezi about a katalogem ===== */
+.catalog-banner {
+  max-width: 1280px;
+  margin: 56px auto 24px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* scroll-margin-top — kompenzuje sticky header (cca 72 px)
+     aby banner byl plně viditelný po scrollIntoView */
+  scroll-margin-top: 90px;
+}
+.banner-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.banner-text {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===== MAIN — souvislý grid produktů ===== */
+main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 720px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+.product {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  /* POZOR: žádné overflow: hidden zde — bránilo by tooltipům
+     vytékat z karty. Image area má vlastní overflow níže. */
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
+  position: relative;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: translateY(24px);
+}
+.product.visible { opacity: 1; transform: translateY(0); }
+.product::before {
+  content: attr(data-num);
+  position: absolute; top: 16px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 600;
+  color: rgba(0,0,0,0.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: #f0f0f0;
+  padding: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;  /* zachovat ořezání obrázků v zaoblených rozích */
+}
+.product-images:has(.img-life) { grid-template-columns: 38fr 62fr; }
+.img-main, .img-life {
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 1 / 0.85;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.img-life { aspect-ratio: 1 / 0.85; }
+.prod-img, .life-img {
+  width: 100%; height: 100%;
+  object-fit: contain; padding: 12px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.life-img { object-fit: cover; padding: 0; }
+.img-main:hover .prod-img, .img-life:hover .life-img {
+  transform: scale(1.06);
+}
+.placeholder {
+  width: 100%; height: 100%;
+  background: #eee; color: #999;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+.product-info {
+  padding: 24px 24px 28px;
+  position: relative; z-index: 1;
+}
+.cat-label {
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--brand-red);
+  margin-bottom: 8px;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.product-desc {
+  font-size: 14px; font-weight: 300;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.product-meta {
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+.dims-label {
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.dims-value {
+  font-size: 13px; color: var(--text);
+  font-weight: 500;
+}
+.code {
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em; line-height: 1;
+}
+.price sup {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 400;
+  color: var(--text-mute);
+  vertical-align: super;
+}
+.price-note {
+  font-size: 10px; color: var(--text-mute);
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: right;
+}
+
+/* ===== TOOLTIP pro patentované značky =====
+   PURE CSS — žádný JS. Hover/focus zobrazí bublinu.
+   .brand-tip = inline-block + position: relative (pro absolute child) */
+.brand-tip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dotted var(--brand-red);
+  cursor: help;
+  color: var(--text);
+  outline: none;
+}
+.brand-name-inline { font-weight: 500; }
+.brand-tip > sup {
+  color: var(--brand-red);
+  font-weight: 600;
+  font-size: 0.7em;
+  margin-left: 1px;
+}
+.tip-bubble {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: var(--genex-blue);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  width: max-content;
+  max-width: min(280px, 70vw);
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(31,42,90,0.25);
+}
+.tip-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--genex-blue);
+}
+.brand-tip:hover .tip-bubble,
+.brand-tip:focus-within .tip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile fallback — na úzkých displejích posunout bublinu doleva,
+   aby nevytékala vpravo */
+@media (max-width: 720px) {
+  .tip-bubble { max-width: calc(100vw - 32px); }
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
+  background: var(--genex-blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(31,42,90,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s, background 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.back-to-top:hover { background: var(--accent); }
+.back-to-top svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 640px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(20,20,30,0.92);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+}
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 95vw; max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox.active img { transform: scale(1); }
+.lightbox-close {
+  position: absolute; top: 24px; right: 24px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(90deg);
+}
+
+/* ===== FOOTER (sjednocený se stávajícím webem GENEX VS) ===== */
+footer {
+  background-color: #000066;
+  color: #fff;
+  padding: 4rem 0 2rem;
+  margin-top: 64px;
+}
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.footer-content p { margin: 0; }
+.footer-logo-img {
+  height: auto;
+  width: 150px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+.footer-copyright {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+.text-gray { color: #aaa; }
+.text-sm { font-size: 0.9rem; }
+.text-white { color: #ffffff !important; }
+.underline { text-decoration: underline !important; }
+.footer-copyright a { color: #ffffff !important; text-decoration: underline !important; }
+
+/* ===== UTILS ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a href="../index.html" class="logo">
+      <img src="../assets/logo_genex_velkoo_original.png" alt="GENEX VS" class="logo-img">
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primary-navigation" aria-label="Hlavní">
+      <ul>
+        <li><a href="../index.html">Úvod</a></li>
+        <li><a href="../domaci-potreby.html">Domácí potřeby</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Katalog</a></li>
+        <li><a href="../o-spolecnosti.html">O společnosti</a></li>
+        <li><a href="../kontakty.html">Kontakty</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <img src="images/logo_metaltex.jpg" alt="Metaltex" class="hero-logo">
+  <h1 class="hero-title">METALTEX</h1>
+  <p class="hero-subtitle">Zkušený výrobce domácích potřeb s více než <strong>80 lety zkušeností</strong>. Stabilní a spolehlivá společnost s italským designem a evropskou výrobou.</p>
+  <button class="btn-primary" id="aboutBtn" aria-expanded="false" aria-controls="aboutSection">
+    <span>Více o firmě</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+</section>
+
+<!-- ABOUT — rozbalitelná sekce -->
+<section class="about" id="aboutSection" aria-hidden="true">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2 class="about-title">O společnosti Metaltex</h2>
+      <p>
+        <strong>METALTEX</strong> je zkušený výrobce domácích potřeb s více než
+        <strong>80 lety zkušeností</strong> a je na mezinárodní scéně uznáván
+        jako stabilní a spolehlivá společnost.
+      </p>
+      <p>
+        Věnuje se výrobě vysoce kvalitního zboží pro domácnost, které je
+        navrženo s pečlivým ohledem na funkčnost, estetiku, materiály, cenu
+        a splňuje regulační normy EU.
+      </p>
+      <p>
+        Během let zkušeností se v Metaltexu naučili, že to jsou klíčové
+        vlastnosti, které musí produkty a služby mít, aby splňovaly potřeby
+        zákazníků po celém světě.
+      </p>
+    </div>
+    <div class="about-image"><img src="images/Metaltex_firma.jpg" alt="Sídlo Metaltex" loading="lazy"></div>
+  </div>
+
+  <div class="about-slides"><h3 class="about-h3">The Metaltex Standard</h3><div class="slides-grid"><div class="slide" data-num="1"><img src="images/The_Metaltex_1.png" alt="Metaltex Standard 1" class="slide-img" data-full="images/The_Metaltex_1.png" loading="lazy"></div><div class="slide" data-num="2"><img src="images/The_Metaltex_2.png" alt="Metaltex Standard 2" class="slide-img" data-full="images/The_Metaltex_2.png" loading="lazy"></div><div class="slide" data-num="3"><img src="images/The_Metaltex_3.png" alt="Metaltex Standard 3" class="slide-img" data-full="images/The_Metaltex_3.png" loading="lazy"></div><div class="slide" data-num="4"><img src="images/The_Metaltex_4.png" alt="Metaltex Standard 4" class="slide-img" data-full="images/The_Metaltex_4.png" loading="lazy"></div></div></div>
+
+  <div class="about-back">
+    <button class="btn-secondary" id="backBtn">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      <span>Zpět ke katalogu</span>
+    </button>
+  </div>
+</section>
+
+<!-- BANNER mezi about a katalogem -->
+<div class="catalog-banner" id="catalogTop">
+  <span class="banner-line"></span>
+  <span class="banner-text">Katalog produktů Metaltex</span>
+  <span class="banner-line"></span>
+</div>
+
+<!-- KATALOG -->
+<main>
+  <div class="products-grid">
+            <article class="product" data-num="01">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846251113.png" alt="Otvírák na lahve univerzální 4v1" class="prod-img" data-full="images/846251113.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846251113_p.png" alt="Otvírák na lahve univerzální 4v1 v užití" class="life-img" data-full="images/846251113_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyňské náčiní</div>
+                <h3 class="product-name">Otvírák na lahve univerzální 4v1</h3>
+                <p class="product-desc">Univerzální otvírák 4 v 1 — na sklenice, lahve, kovové uzávěry i jako otvírák konzerv. Robustní ocelová konstrukce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">20 × 5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846251113</span>
+                    <span class="price">60<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="02">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846222193.png" alt="Forma do fritézy SILIKON 21,5x21,5 skládací" class="prod-img" data-full="images/846222193.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846222193_p.png" alt="Forma do fritézy SILIKON 21,5x21,5 skládací v užití" class="life-img" data-full="images/846222193_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vaření a pečení</div>
+                <h3 class="product-name">Forma do fritézy SILIKON 21,5x21,5 skládací</h3>
+                <p class="product-desc">Skládací silikonová forma do horkovzdušné fritézy, čtvercový tvar. Vyrobeno ze silikonu vhodného pro styk s potravinami.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">21,5 × 21,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846222193</span>
+                    <span class="price">86<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="03">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846222194.png" alt="Forma do fritézy SILIKON d20 skládací" class="prod-img" data-full="images/846222194.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846222194_p.png" alt="Forma do fritézy SILIKON d20 skládací v užití" class="life-img" data-full="images/846222194_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vaření a pečení</div>
+                <h3 class="product-name">Forma do fritézy SILIKON d20 skládací</h3>
+                <p class="product-desc">Skládací silikonová forma do horkovzdušné fritézy, kruhový tvar. Vyrobeno ze silikonu vhodného pro styk s potravinami.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">ø 20 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846222194</span>
+                    <span class="price">86<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="04">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846252496.png" alt="Podložka na indukci (2ks) d22+d24" class="prod-img" data-full="images/846252496.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846252496_p.png" alt="Podložka na indukci (2ks) d22+d24 v užití" class="life-img" data-full="images/846252496_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vaření a pečení</div>
+                <h3 class="product-name">Podložka na indukci (2ks) d22+d24</h3>
+                <p class="product-desc">Sada 2 ks podložek na indukční varnou desku, lze na nich i vařit s libovolným nádobím. Skleněné vlákno se silikonem. Vhodné do myčky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">ø 22 + ø 24 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846252496</span>
+                    <span class="price">74<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="05">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846251305.png" alt="Kráječ cibule TWIST" class="prod-img" data-full="images/846251305.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846251305_p.png" alt="Kráječ cibule TWIST v užití" class="life-img" data-full="images/846251305_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Příprava pokrmů</div>
+                <h3 class="product-name">Kráječ cibule TWIST</h3>
+                <p class="product-desc">Kráječ cibule a zeleniny s automaticky rotujícími noži. Vyjímatelné čepele z nerezové oceli pro snadné mytí, tělo z ABS plastu. Stačí potravinu vložit dovnitř a stlačit dlaní.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">ø 8,5 × 23 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846251305</span>
+                    <span class="price">112<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="06">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846569000.png" alt="Prkénko UH 34x21 ORIGAMI sklopné" class="prod-img" data-full="images/846569000.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846569000_p.png" alt="Prkénko UH 34x21 ORIGAMI sklopné v užití" class="life-img" data-full="images/846569000_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Příprava pokrmů</div>
+                <h3 class="product-name">Prkénko UH 34x21 ORIGAMI sklopné</h3>
+                <p class="product-desc">Prkénko Origami je vybaveno dvěma sklopnými bočními chlopněmi, které pomáhají přesně nasměrovat nakrájenou surovinu do hrnce nebo pánve. Praktický a jedinečný design.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">34 × 21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846569000</span>
+                    <span class="price">61<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="07">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846248134.png" alt="Nůž STEAK  21cm BASIC MIX" class="prod-img" data-full="images/846248134.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846248134_p.png" alt="Nůž STEAK  21cm BASIC MIX v užití" class="life-img" data-full="images/846248134_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nože a krájení</div>
+                <h3 class="product-name">Nůž STEAK  21cm BASIC MIX</h3>
+                <p class="product-desc">Steakový nůž z řady Basic s ozubeným ostřím z odolné nerezové oceli. Ergonomická rukojeť z PP plastu, součástí je ochranný kryt ostří.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846248134</span>
+                    <span class="price">14<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="08">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846248129.png" alt="Nůž loupací 19cm BASIC MIX" class="prod-img" data-full="images/846248129.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846248129_p.png" alt="Nůž loupací 19cm BASIC MIX v užití" class="life-img" data-full="images/846248129_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nože a krájení</div>
+                <h3 class="product-name">Nůž loupací 19cm BASIC MIX</h3>
+                <p class="product-desc">Loupací nůž z řady Basic s krátkým ostřím z nerezové oceli. Rukojeť z PP plastu, ochranný kryt ostří. Ideální pro loupání ovoce a zeleniny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">19 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846248129</span>
+                    <span class="price">13<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="09">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846364901.png" alt="Držák na lahve do lednice 41x33" class="prod-img" data-full="images/846364901.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846364901_p.png" alt="Držák na lahve do lednice 41x33 v užití" class="life-img" data-full="images/846364901_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Lednice a chlazení</div>
+                <h3 class="product-name">Držák na lahve do lednice 41x33</h3>
+                <p class="product-desc">Cool-Bottle — držák lahví do lednice. Vhodný pro lahve vína i PET až 2 litry. Police z akáciového dřeva, <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 33 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846364901</span>
+                    <span class="price">171<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="10">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846321680.png" alt="Odkapávač nádobí 2v1 DRY-TEX LAVA 45x40x7 černý" class="prod-img" data-full="images/846321680.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846321680_p.jpg" alt="Odkapávač nádobí 2v1 DRY-TEX LAVA 45x40x7 černý v užití" class="life-img" data-full="images/846321680_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí 2v1 DRY-TEX LAVA 45x40x7 černý</h3>
+                <p class="product-desc">2v1 odkapávač s mikrovláknovou podložkou pro extra sušení. Dvousekční drátěná mřížka, <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">45 × 40 × 7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846321680</span>
+                    <span class="price">227<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="11">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846325026.png" alt="Odkapávač nádobí AQUATEX PLUS 35x30x11" class="prod-img" data-full="images/846325026.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846325026_p.jpg" alt="Odkapávač nádobí AQUATEX PLUS 35x30x11 v užití" class="life-img" data-full="images/846325026_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí AQUATEX PLUS 35x30x11</h3>
+                <p class="product-desc">Univerzální odkapávač s rozšiřitelnou plastovou miskou. Dvojité povrchové ošetření pro delší životnost.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35 × 30 × 12 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846325026</span>
+                    <span class="price">353<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="12">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846320485.png" alt="Odkapávač nádobí GRAVITY SLIM 42x8" class="prod-img" data-full="images/846320485.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846320485_p.png" alt="Odkapávač nádobí GRAVITY SLIM 42x8 v užití" class="life-img" data-full="images/846320485_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí GRAVITY SLIM 42x8</h3>
+                <p class="product-desc">Protiskluzová odkapová podložka 2v1 na okraj dřezu. Mírný sklon odvádí vodu přímo do dřezu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">40 × 8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846320485</span>
+                    <span class="price">48<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="13">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846320495.png" alt="Odkapávač nádobí GRAVITY-DUO 40x33" class="prod-img" data-full="images/846320495.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846320495_p.jpg" alt="Odkapávač nádobí GRAVITY-DUO 40x33 v užití" class="life-img" data-full="images/846320495_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí GRAVITY-DUO 40x33</h3>
+                <p class="product-desc">Chytrá odkapová podložka 2v1 pro každodenní použití. Udržuje pracovní desku suchou — žádné kaluže, mokré utěrky a vlhké povrchy.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">40 × 33 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846320495</span>
+                    <span class="price">169<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="14">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846321600.png" alt="Odkapávač nádobí ROCKY-LAVA 50x37 černý" class="prod-img" data-full="images/846321600.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846321600_p.jpg" alt="Odkapávač nádobí ROCKY-LAVA 50x37 černý v užití" class="life-img" data-full="images/846321600_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí ROCKY-LAVA 50x37 černý</h3>
+                <p class="product-desc">Pevný odkapávač z robustního drátu. Dvousekční mřížka, neklouzavé nožičky, <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50 × 37 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846321600</span>
+                    <span class="price">283<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="15">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846325535.png" alt="Odkapávač nádobí na dřez SINK-FIT LAVA 35/59x30" class="prod-img" data-full="images/846325535.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846325535_p.png" alt="Odkapávač nádobí na dřez SINK-FIT LAVA 35/59x30 v užití" class="life-img" data-full="images/846325535_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí na dřez SINK-FIT LAVA 35/59x30</h3>
+                <p class="product-desc">Nastavitelný odkapávač přes dřez s PP držákem na příbory. Po použití složitelný, <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35 × 30 × 11 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846325535</span>
+                    <span class="price">328<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="16">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846185020.png" alt="Odkapávač nádobí DO DŘEZU 32/52x18x10 šedý" class="prod-img" data-full="images/846185020.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846185020_p.png" alt="Odkapávač nádobí DO DŘEZU 32/52x18x10 šedý v užití" class="life-img" data-full="images/846185020_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí DO DŘEZU 32/52x18x10 šedý</h3>
+                <p class="product-desc">Drain-Flex — nastavitelný odkapávač do dřezu. Šířka roztažitelná od 35 do 53 cm. Pro mytí ovoce, zeleniny i kuchyňského nářadí. Materiál PP.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">32–52 × 18 × 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846185020</span>
+                    <span class="price">121<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="17">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297533.png" alt="Odkapávač na příbory NASTAVITELNÝ 12x17x21 UH" class="prod-img" data-full="images/846297533.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297533_p.png" alt="Odkapávač na příbory NASTAVITELNÝ 12x17x21 UH v užití" class="life-img" data-full="images/846297533_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač na příbory NASTAVITELNÝ 12x17x21 UH</h3>
+                <p class="product-desc">KEEPTEX — nastavitelný odkapávač na příbory pro malé i velké kuchyňské nástroje. 5 nastavitelných přihrádek, držák ostří pro bezpečnost, výlevka.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12 × 17 × 21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297533</span>
+                    <span class="price">277<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="18">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846322055.png" alt="Odkapávač nádobí na dřez ROHOVÝ 17x43x17" class="prod-img" data-full="images/846322055.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846322055_p.png" alt="Odkapávač nádobí na dřez ROHOVÝ 17x43x17 v užití" class="life-img" data-full="images/846322055_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí na dřez ROHOVÝ 17x43x17</h3>
+                <p class="product-desc">Cornertex — rohový odkapávač do dřezu. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Polytherm</span><sup>*</sup><span class="tip-bubble">Polytherm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná, antistatická a snadno omyvatelná.</span></span> povrchová úprava. Využije rohový prostor dřezu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">17 × 43 × 17 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846322055</span>
+                    <span class="price">155<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="19">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846322054.png" alt="Odkapávač nádobí na dřez SINKTEX 54x20x4" class="prod-img" data-full="images/846322054.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846322054_p.jpg" alt="Odkapávač nádobí na dřez SINKTEX 54x20x4 v užití" class="life-img" data-full="images/846322054_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odkapávače nádobí</div>
+                <h3 class="product-name">Odkapávač nádobí na dřez SINKTEX 54x20x4</h3>
+                <p class="product-desc">Sinktex — multifunkční odkapávač přes dřez. Tenký profil, voda odtéká přímo do dřezu. Nezabírá místo na pracovní desce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">54 × 20 × 4 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846322054</span>
+                    <span class="price">197<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="20">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297559.png" alt="Sítko/lapač do dřezu silikon" class="prod-img" data-full="images/846297559.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297559_p.png" alt="Sítko/lapač do dřezu silikon v užití" class="life-img" data-full="images/846297559_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Dřez - příslušenství</div>
+                <h3 class="product-name">Sítko/lapač do dřezu silikon</h3>
+                <p class="product-desc">Silikonové sítko / lapač zbytků do odpadu dřezu. Zabrání ucpání odtoku, zachytí zbytky jídla. Snadné čištění opláchnutím, vhodné do myčky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">ø 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297559</span>
+                    <span class="price">23<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="21">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297558.png" alt="Zátka-sítko/lapač do dřezu d11 silikon" class="prod-img" data-full="images/846297558.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297558_p.png" alt="Zátka-sítko/lapač do dřezu d11 silikon v užití" class="life-img" data-full="images/846297558_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Dřez - příslušenství</div>
+                <h3 class="product-name">Zátka-sítko/lapač do dřezu d11 silikon</h3>
+                <p class="product-desc">Silikonová zátka 2 v 1 — uzavře odtok i poslouží jako lapač zbytků. Univerzální průměr 11 cm sedí na většinu dřezů. Pružný a odolný silikon.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">ø 11 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297558</span>
+                    <span class="price">41<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="22">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846320490.png" alt="Organizér - odkapávač ke dřezu Tidy-Mat 23x9" class="prod-img" data-full="images/846320490.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846320490_p.png" alt="Organizér - odkapávač ke dřezu Tidy-Mat 23x9 v užití" class="life-img" data-full="images/846320490_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Organizéry ke dřezu</div>
+                <h3 class="product-name">Organizér - odkapávač ke dřezu Tidy-Mat 23x9</h3>
+                <p class="product-desc">Tidy-Mat — kompaktní odkapová podložka pro houbu a mýdlo u dřezu. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Polytherm</span><sup>*</sup><span class="tip-bubble">Polytherm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná, antistatická a snadno omyvatelná.</span></span> povrchová úprava, odolná proti rzi a prachu. Sušší prostředí, méně bakterií.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">23 × 9 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846320490</span>
+                    <span class="price">64<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="23">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297530.png" alt="Organizér-stojan ke dřezu Tidytex 24x13x14" class="prod-img" data-full="images/846297530.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297530_p.jpg" alt="Organizér-stojan ke dřezu Tidytex 24x13x14 v užití" class="life-img" data-full="images/846297530_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Organizéry ke dřezu</div>
+                <h3 class="product-name">Organizér-stojan ke dřezu Tidytex 24x13x14</h3>
+                <p class="product-desc">Tidytex — kompaktní organizér pro úhledný dřez. Konfigurovatelné přihrádky podle potřeby, ABS konstrukce, EVA gumové dno, 2 výsuvné lišty pro utěrky a houby.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">24 × 13 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297530</span>
+                    <span class="price">238<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="24">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846344503.png" alt="Regál 3koše s kolečky LUGANO LAVA mat.černá 41x23x63" class="prod-img" data-full="images/846344503.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846344503_p.jpg" alt="Regál 3koše s kolečky LUGANO LAVA mat.černá 41x23x63 v užití" class="life-img" data-full="images/846344503_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Regál 3koše s kolečky LUGANO LAVA mat.černá 41x23x63</h3>
+                <p class="product-desc">Lugano LAVA — pojízdný multifunkční regál se 3 koši v matné černé. Praktická volba do kuchyně, koupelny i kanceláře. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 23 × 63 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846344503</span>
+                    <span class="price">270<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="25">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846340633.png" alt="Regál 3koše s kolečky SIENA bílý 41x23x63" class="prod-img" data-full="images/846340633.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846340633_p.jpg" alt="Regál 3koše s kolečky SIENA bílý 41x23x63 v užití" class="life-img" data-full="images/846340633_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Regál 3koše s kolečky SIENA bílý 41x23x63</h3>
+                <p class="product-desc">Siena — pojízdný servisní vozík se 3 koši v klasické bílé. Univerzální úložný prostor pro kuchyň, koupelnu i prádelnu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 23 × 63 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846340633</span>
+                    <span class="price">180<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="26">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846344504.png" alt="Regál 4koše s kolečky ASCONA LAVA mat.čarná 41x23x84" class="prod-img" data-full="images/846344504.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846344504_p.jpg" alt="Regál 4koše s kolečky ASCONA LAVA mat.čarná 41x23x84 v užití" class="life-img" data-full="images/846344504_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Regál 4koše s kolečky ASCONA LAVA mat.čarná 41x23x84</h3>
+                <p class="product-desc">Ascona LAVA — vyšší extra úzký pojízdný regál se 4 koši v matné černé. Více úložného prostoru i v úzkých štěrbinách. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 23 × 84 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846344504</span>
+                    <span class="price">342<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="27">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846340634.png" alt="Regál 4koše s kolečky PISA bílý 41x23x84" class="prod-img" data-full="images/846340634.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846340634_p.jpg" alt="Regál 4koše s kolečky PISA bílý 41x23x84 v užití" class="life-img" data-full="images/846340634_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Regál 4koše s kolečky PISA bílý 41x23x84</h3>
+                <p class="product-desc">Pisa — vyšší pojízdný vozík se 4 koši v klasické bílé. Patentovaný systém uchycení košů umožňuje snadnou montáž bez nářadí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 23 × 84 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846340634</span>
+                    <span class="price">218<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="28">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846362304.png" alt="Stojan na pánve 4p CANYON LAVA 25x27x23" class="prod-img" data-full="images/846362304.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846362304_p.jpg" alt="Stojan na pánve 4p CANYON LAVA 25x27x23 v užití" class="life-img" data-full="images/846362304_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Stojan na pánve 4p CANYON LAVA 25x27x23</h3>
+                <p class="product-desc">Canyon LAVA — stojan na 4 pánve. Čtyři jasně oddělené sekce pro úhledné uložení. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, nerezová a odolná proti poškrábání.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">25 × 27 × 23 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846362304</span>
+                    <span class="price">106<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="29">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846382912.png" alt="Stojan na víno 3p WINEBAR12 LAVA" class="prod-img" data-full="images/846382912.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846382912_p.jpg" alt="Stojan na víno 3p WINEBAR12 LAVA v užití" class="life-img" data-full="images/846382912_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Stojan na víno 3p WINEBAR12 LAVA</h3>
+                <p class="product-desc">Winebar12 LAVA — designový stojan na 12 lahví vína v matné černé. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating. Vhodný pro 1L lahve.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">46 × 12 × 36 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846382912</span>
+                    <span class="price">330<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="30">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846382932.png" alt="Stojan na víno 4p TOWER12 LAVA" class="prod-img" data-full="images/846382932.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846382932_p.jpg" alt="Stojan na víno 4p TOWER12 LAVA v užití" class="life-img" data-full="images/846382932_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Regály a stojany</div>
+                <h3 class="product-name">Stojan na víno 4p TOWER12 LAVA</h3>
+                <p class="product-desc">Tower12 LAVA — vertikální stojan na 12 lahví vína v matné černé. Šetří prostor díky úzkému půdorysu, designový doplněk do jídelny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">15 × 15 × 60 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846382932</span>
+                    <span class="price">274<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="31">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846404998.png" alt="Háček (2ks) + vakuová pumpička VACUUM-FIX" class="prod-img" data-full="images/846404998.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846404998_p.png" alt="Háček (2ks) + vakuová pumpička VACUUM-FIX v užití" class="life-img" data-full="images/846404998_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné systémy</div>
+                <h3 class="product-name">Háček (2ks) + vakuová pumpička VACUUM-FIX</h3>
+                <p class="product-desc">Vacuum-Fix — sada 2 háčků s vakuovou pumpičkou. Spolehlivé uchycení bez vrtání na hladké povrchy (sklo, dlažba, glazura). Snadné přemístění.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">6 × 5 × 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846404998</span>
+                    <span class="price">114<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="32">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401100.png" alt="Háček (2ks) +lepidlo SAFEFIX pro závěsný systém" class="prod-img" data-full="images/846401100.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401100_p.jpg" alt="Háček (2ks) +lepidlo SAFEFIX pro závěsný systém v užití" class="life-img" data-full="images/846401100_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné systémy</div>
+                <h3 class="product-name">Háček (2ks) +lepidlo SAFEFIX pro závěsný systém</h3>
+                <p class="product-desc">SafeFix — sada 2 háčků se silným lepidlem. Snadná montáž na zeď nebo dlažbu bez vrtání, nosnost až 10 kg. Lze odstranit škrabkou bez zbytků.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">5 × 4 × 8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401100</span>
+                    <span class="price">82<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="33">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846258198.png" alt="Lišta magnetická 33cm ČERNÁ" class="prod-img" data-full="images/846258198.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846258198_p.jpg" alt="Lišta magnetická 33cm ČERNÁ v užití" class="life-img" data-full="images/846258198_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Magnetické lišty a háčky</div>
+                <h3 class="product-name">Lišta magnetická 33cm ČERNÁ</h3>
+                <p class="product-desc">Magnetika — magnetická lišta na nože a kovové nářadí. Dvojitý magnetický pás z kvalitního plastu, lze montovat vodorovně i svisle. Šroubky součástí balení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">33 × 4 × 2 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846258198</span>
+                    <span class="price">75<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="34">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846258195.png" alt="Lišta magnetická 39cm STŘÍBRNÁ + háčky" class="prod-img" data-full="images/846258195.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846258195_p.jpg" alt="Lišta magnetická 39cm STŘÍBRNÁ + háčky v užití" class="life-img" data-full="images/846258195_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Magnetické lišty a háčky</div>
+                <h3 class="product-name">Lišta magnetická 39cm STŘÍBRNÁ + háčky</h3>
+                <p class="product-desc">Magnetika 39 cm ve stříbrné s háčky — multifunkční zavěšení nožů, kovového náčiní i koření. Snadná montáž na zeď, šroubky součástí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">39 × 4 × 2 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846258195</span>
+                    <span class="price">324<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="35">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846361128.png" alt="Lišta závěsná na hrnky 10háčků MYMUG LAVA" class="prod-img" data-full="images/846361128.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846361128_p.jpg" alt="Lišta závěsná na hrnky 10háčků MYMUG LAVA v užití" class="life-img" data-full="images/846361128_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Magnetické lišty a háčky</div>
+                <h3 class="product-name">Lišta závěsná na hrnky 10háčků MYMUG LAVA</h3>
+                <p class="product-desc">My-Mug LAVA — závěsný držák na 10 hrnků pod polici. Vhodný pro police do 2,2 cm. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, odolný proti rzi a poškrábání.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50 × 4 × 5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846361128</span>
+                    <span class="price">133<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="36">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846361130.png" alt="Lišta závěsná na nádobí 10 háčků MYHOOKS LAVA" class="prod-img" data-full="images/846361130.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846361130_p.jpg" alt="Lišta závěsná na nádobí 10 háčků MYHOOKS LAVA v užití" class="life-img" data-full="images/846361130_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Magnetické lišty a háčky</div>
+                <h3 class="product-name">Lišta závěsná na nádobí 10 háčků MYHOOKS LAVA</h3>
+                <p class="product-desc">My-Hooks LAVA — lišta pod polici s 10 háčky na kuchyňské náčiní. Montáž pod polici, <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating v matné černé.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50 × 4 × 5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846361130</span>
+                    <span class="price">123<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="37">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401114.png" alt="Police závěsná ORIGIN LAVA 2 patra 26x10x30 černá" class="prod-img" data-full="images/846401114.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401114_p.png" alt="Police závěsná ORIGIN LAVA 2 patra 26x10x30 černá v užití" class="life-img" data-full="images/846401114_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné police</div>
+                <h3 class="product-name">Police závěsná ORIGIN LAVA 2 patra 26x10x30 černá</h3>
+                <p class="product-desc">Origin LAVA — dvoupatrová závěsná police se síťovaným dnem. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating v matné černé, odolná proti rzi a poškrábání. Vhodná do koupelny i kuchyně.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26 × 10 × 30 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401114</span>
+                    <span class="price">325<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="38">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401104.png" alt="Police závěsná ORIGIN LAVA 26x10 černá" class="prod-img" data-full="images/846401104.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401104_p.jpg" alt="Police závěsná ORIGIN LAVA 26x10 černá v užití" class="life-img" data-full="images/846401104_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné police</div>
+                <h3 class="product-name">Police závěsná ORIGIN LAVA 26x10 černá</h3>
+                <p class="product-desc">Origin LAVA — jednoduchá obdélníková závěsná police. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, lze postavit i pověsit (šrouby nebo lepicí háčky nejsou součástí).</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26 × 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401104</span>
+                    <span class="price">155<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="39">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401106.png" alt="Police závěsná roh.ORIGIN LAVA 20x20 černá" class="prod-img" data-full="images/846401106.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401106_p.jpg" alt="Police závěsná roh.ORIGIN LAVA 20x20 černá v užití" class="life-img" data-full="images/846401106_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné police</div>
+                <h3 class="product-name">Police závěsná roh.ORIGIN LAVA 20x20 černá</h3>
+                <p class="product-desc">Origin LAVA — rohová závěsná police. Využije rohový prostor v koupelně nebo kuchyni. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">20 × 20 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401106</span>
+                    <span class="price">193<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="40">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401116.png" alt="Police závěsná roh.ORIGIN LAVA 2patra 20x20x30 černá" class="prod-img" data-full="images/846401116.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401116_p.png" alt="Police závěsná roh.ORIGIN LAVA 2patra 20x20x30 černá v užití" class="life-img" data-full="images/846401116_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné police</div>
+                <h3 class="product-name">Police závěsná roh.ORIGIN LAVA 2patra 20x20x30 černá</h3>
+                <p class="product-desc">Origin LAVA — dvoupatrová rohová police. Maximum úložného prostoru v rohu, designově sladěná řada v matné černé.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">20 × 20 × 30 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401116</span>
+                    <span class="price">364<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="41">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846363830.png" alt="Košík závěsný BABATEX 30x26x14 bílý" class="prod-img" data-full="images/846363830.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846363830_p.jpg" alt="Košík závěsný BABATEX 30x26x14 bílý v užití" class="life-img" data-full="images/846363830_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Košík závěsný BABATEX 30x26x14 bílý</h3>
+                <p class="product-desc">Babatex — závěsný drátěný košík na police 30 cm v bílé. LDPE plastový povlak. Praktické uložení v kuchyni, koupelně i prádelně. 3letá záruka.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30 × 26 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846363830</span>
+                    <span class="price">66<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="42">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846363840.png" alt="Košík závěsný BABATEX 40x26x14 bílý" class="prod-img" data-full="images/846363840.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846363840_p.png" alt="Košík závěsný BABATEX 40x26x14 bílý v užití" class="life-img" data-full="images/846363840_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Košík závěsný BABATEX 40x26x14 bílý</h3>
+                <p class="product-desc">Babatex 40 — větší závěsný drátěný košík na police v bílé. Více úložného prostoru pro náročnější potřeby. LDPE plastový povlak.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">40 × 26 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846363840</span>
+                    <span class="price">73<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="43">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846363030.png" alt="Košík závěsný KANGURO LAVA 30x26x14" class="prod-img" data-full="images/846363030.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846363030_p.jpg" alt="Košík závěsný KANGURO LAVA 30x26x14 v užití" class="life-img" data-full="images/846363030_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Košík závěsný KANGURO LAVA 30x26x14</h3>
+                <p class="product-desc">Kanguro LAVA — závěsný košík na police v matné černé. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, odolný proti rzi.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30 × 26 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846363030</span>
+                    <span class="price">80<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="44">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846363040.png" alt="Košík závěsný KANGURO LAVA 40x26x14" class="prod-img" data-full="images/846363040.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846363040_p.jpg" alt="Košík závěsný KANGURO LAVA 40x26x14 v užití" class="life-img" data-full="images/846363040_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Košík závěsný KANGURO LAVA 40x26x14</h3>
+                <p class="product-desc">Kanguro 40 LAVA — větší závěsný košík na police v matné černé. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">40 × 26 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846363040</span>
+                    <span class="price">87<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="45">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352612.png" alt="Organizér závěsný 2 koše GALILEO LAVA 26x12x36" class="prod-img" data-full="images/846352612.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352612_p.jpg" alt="Organizér závěsný 2 koše GALILEO LAVA 26x12x36 v užití" class="life-img" data-full="images/846352612_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Organizér závěsný 2 koše GALILEO LAVA 26x12x36</h3>
+                <p class="product-desc">Galileo LAVA — závěsný organizér se 2 koši. Lze pověsit zevnitř i zvenku skříněk. 6 samolepicích silikonových podložek proti poškrábání a pádu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26 × 12 × 36 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352612</span>
+                    <span class="price">322<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="46">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352610.png" alt="Organizér závěsný GALILEO LAVA 20x15x36" class="prod-img" data-full="images/846352610.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352610_p.jpg" alt="Organizér závěsný GALILEO LAVA 20x15x36 v užití" class="life-img" data-full="images/846352610_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Organizér závěsný GALILEO LAVA 20x15x36</h3>
+                <p class="product-desc">Galileo LAVA — vyšší závěsný organizér v matné černé. Lze pověsit zevnitř i zvenku dveří skříněk. Antikorozní úprava, antistatický.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">20 × 15 × 36 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352610</span>
+                    <span class="price">267<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="47">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352608.png" alt="Organizér závěsný GALILEO LAVA 34x12x22" class="prod-img" data-full="images/846352608.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352608_p.jpg" alt="Organizér závěsný GALILEO LAVA 34x12x22 v užití" class="life-img" data-full="images/846352608_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Závěsné košíky a organizéry</div>
+                <h3 class="product-name">Organizér závěsný GALILEO LAVA 34x12x22</h3>
+                <p class="product-desc">Galileo LAVA — široký závěsný organizér do skříněk v matné černé. Praktické úložiště pro láhve, kořenky či úklid. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">34 × 12 × 22 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352608</span>
+                    <span class="price">252<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="48">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352606.png" alt="Držák na papírové utěrky GALILEO LAVA 34x18" class="prod-img" data-full="images/846352606.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352606_p.jpg" alt="Držák na papírové utěrky GALILEO LAVA 34x18 v užití" class="life-img" data-full="images/846352606_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Držáky a věšáky</div>
+                <h3 class="product-name">Držák na papírové utěrky GALILEO LAVA 34x18</h3>
+                <p class="product-desc">Galileo LAVA — závěsný držák na papírové utěrky. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, lze pověsit zevnitř i zvenku skříňky. Snadná výměna role.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">34 × 18 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352606</span>
+                    <span class="price">155<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="49">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352604.png" alt="Držák na utěrky GALILEO LAVA 30x8" class="prod-img" data-full="images/846352604.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352604_p.jpg" alt="Držák na utěrky GALILEO LAVA 30x8 v užití" class="life-img" data-full="images/846352604_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Držáky a věšáky</div>
+                <h3 class="product-name">Držák na utěrky GALILEO LAVA 30x8</h3>
+                <p class="product-desc">Galileo LAVA — závěsný držák na utěrky. Pro běžné kuchyňské nebo koupelnové utěrky. Bez vrtání, drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30 × 8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352604</span>
+                    <span class="price">111<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="50">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846352602.png" alt="Věšák na dveře 2 háčky GALILEO LAVA  6x4" class="prod-img" data-full="images/846352602.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846352602_p.jpg" alt="Věšák na dveře 2 háčky GALILEO LAVA  6x4 v užití" class="life-img" data-full="images/846352602_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Držáky a věšáky</div>
+                <h3 class="product-name">Věšák na dveře 2 háčky GALILEO LAVA  6x4</h3>
+                <p class="product-desc">Galileo LAVA — dvojitý háček na dveře. Lze pověsit zevnitř i zvenku skříněk, bez vrtání. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating,</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">6 × 4 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846352602</span>
+                    <span class="price">59<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="51">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846351900.png" alt="Věšák na dveře 5 háčků LAVA 38x15" class="prod-img" data-full="images/846351900.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846351900_p.jpg" alt="Věšák na dveře 5 háčků LAVA 38x15 v užití" class="life-img" data-full="images/846351900_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Držáky a věšáky</div>
+                <h3 class="product-name">Věšák na dveře 5 háčků LAVA 38x15</h3>
+                <p class="product-desc">Závěsná lišta na dveře s 5 háčky v matné černé. <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Polytherm</span><sup>*</sup><span class="tip-bubble">Polytherm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná, antistatická a snadno omyvatelná.</span></span> coating, snadno se navleče na hranu dveří bez vrtání. Pro kabáty, ručníky či doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">38 × 15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846351900</span>
+                    <span class="price">144<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="52">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297543.png" alt="Věšák na utěrky nastavitelný 24–40x8x7" class="prod-img" data-full="images/846297543.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297543_p.jpg" alt="Věšák na utěrky nastavitelný 24–40x8x7 v užití" class="life-img" data-full="images/846297543_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Držáky a věšáky</div>
+                <h3 class="product-name">Věšák na utěrky nastavitelný 24–40x8x7</h3>
+                <p class="product-desc">Flex-Bar — výsuvný závěsný věšák na utěrky s nastavitelnou šířkou 24–40 cm. Odolný plast, snadná instalace bez vrtání. Vhodný do kuchyně i koupelny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">24–40 × 8 × 7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297543</span>
+                    <span class="price">65<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="53">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297526.png" alt="Koš na BIO odpad CLEAN-TEX+stěrka 33x16x16" class="prod-img" data-full="images/846297526.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297526_p.jpg" alt="Koš na BIO odpad CLEAN-TEX+stěrka 33x16x16 v užití" class="life-img" data-full="images/846297526_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Odpadkové koše</div>
+                <h3 class="product-name">Koš na BIO odpad CLEAN-TEX+stěrka 33x16x16</h3>
+                <p class="product-desc">Cleantex — koš na organický odpad pohodlně visí přes hranu dveří skříňky. Součástí praktická stěrka pro hladké stírání zbytků. PP plast, vhodný do myčky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35 × 13 × 16 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297526</span>
+                    <span class="price">135<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="54">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297626.png" alt="Kartáč na lahve set 3 nástavce" class="prod-img" data-full="images/846297626.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297626_p.png" alt="Kartáč na lahve set 3 nástavce v užití" class="life-img" data-full="images/846297626_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a čištění</div>
+                <h3 class="product-name">Kartáč na lahve set 3 nástavce</h3>
+                <p class="product-desc">Sada kartáčů na lahve se 3 různými nástavci — pro lahve, termosky, sklenice i úzké šálky. Pružný drát se silnými štětinami, komfortní úchop.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35 × 5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297626</span>
+                    <span class="price">113<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="55">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846297619.png" alt="Kartáč na čištění úzký (2ks)" class="prod-img" data-full="images/846297619.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846297619_p.png" alt="Kartáč na čištění úzký (2ks) v užití" class="life-img" data-full="images/846297619_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a čištění</div>
+                <h3 class="product-name">Kartáč na čištění úzký (2ks)</h3>
+                <p class="product-desc">Sada 2 úzkých kartáčů na čištění úzkých hrdel, brček, drobných spár a zákoutí. Pružný profil pro snadné protlačení. Komplet pro detailní hygienu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">25 × 2 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846297619</span>
+                    <span class="price">25<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="56">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401133.png" alt="Držák WC papíru ORIGIN LAVA, samolepící" class="prod-img" data-full="images/846401133.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401133_p.png" alt="Držák WC papíru ORIGIN LAVA, samolepící v užití" class="life-img" data-full="images/846401133_p.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a WC</div>
+                <h3 class="product-name">Držák WC papíru ORIGIN LAVA, samolepící</h3>
+                <p class="product-desc">Origin LAVA — samolepící držák WC papíru s integrovaným dávkovačem. Pojme až 4 role, snadná výměna. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">16 × 8 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401133</span>
+                    <span class="price">98<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            
+            <article class="product" data-num="57">
+              <div class="product-images">
+                <div class="img-main"><img src="images/846401109.png" alt="Háček do sprchy dvojitý ORIGIN LAVA 5x6x14" class="prod-img" data-full="images/846401109.png" loading="lazy"></div>
+                <div class="img-life"><img src="images/846401109_p.jpg" alt="Háček do sprchy dvojitý ORIGIN LAVA 5x6x14 v užití" class="life-img" data-full="images/846401109_p.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a WC</div>
+                <h3 class="product-name">Háček do sprchy dvojitý ORIGIN LAVA 5x6x14</h3>
+                <p class="product-desc">Origin LAVA — dvojitý háček do sprchy v matné černé. Drátěná konstrukce s <span class="brand-tip" tabindex="0"><span class="brand-name-inline">Touch-Therm</span><sup>*</sup><span class="tip-bubble">Touch-Therm® — patentovaná antikorozní povrchová úprava značky Metaltex. Odolná proti rzi, poškrábání a opotřebení.</span></span> coating, antikorozní, lze pověsit bez vrtání. Pro župan, ručník, kosmetiku.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">5 × 6 × 14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 846401109</span>
+                    <span class="price">92<sup>&nbsp;Kč</sup></span>
+                  </div>
+                  <div class="price-note">cena bez DPH</div>
+                </div>
+              </div>
+            </article>
+            </div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Náhled obrázku">
+  <button class="lightbox-close" aria-label="Zavřít náhled">×</button>
+  <img src="" alt="">
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="../index.html">
+          <img src="../assets/logo_genex_white.png" alt="GENEX VS" class="footer-logo-img">
+        </a>
+        <h4>GENEX VS, s.r.o.</h4>
+        <p class="text-gray">Velkoobchod s tradicí od roku 2005.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p class="text-gray">genex@genexvs.cz<br>+420 730 893 126</p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 GENEX VS, s.r.o. Všechna práva vyhrazena.
+      <br>
+      <span class="text-sm text-gray">
+        Nepoužíváme analytické ani marketingové cookies. Pouze technické nutné pro provoz webu.
+        <a href="../zasady-ochrany-soukromi.html" class="text-white underline">Více v zásadách.</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobilní menu (sjednoceno se stávajícím webem)
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const primaryNav = document.querySelector('header nav');
+if (mobileBtn && primaryNav) {
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileBtn.classList.toggle('active');
+    primaryNav.classList.toggle('active', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+}
+
+// Scroll animations — produkty se objeví při scrollu (staggered fade-in)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 0.04) + 's';
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.product').forEach(p => observer.observe(p));
+
+// Tooltip funguje přes pure CSS (:hover / :focus-within). Žádný JS.
+
+// ABOUT — toggle + scroll
+const aboutBtn = document.getElementById('aboutBtn');
+const aboutSection = document.getElementById('aboutSection');
+const backBtn = document.getElementById('backBtn');
+const catalogTop = document.getElementById('catalogTop');
+if (aboutBtn && aboutSection) {
+  aboutBtn.addEventListener('click', () => {
+    const isOpen = aboutSection.classList.contains('open');
+    if (isOpen) {
+      aboutSection.classList.remove('open');
+      aboutSection.setAttribute('aria-hidden', 'true');
+      aboutBtn.setAttribute('aria-expanded', 'false');
+      aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    } else {
+      aboutSection.classList.add('open');
+      aboutSection.setAttribute('aria-hidden', 'false');
+      aboutBtn.setAttribute('aria-expanded', 'true');
+      aboutBtn.querySelector('span').textContent = 'Skrýt informace';
+      // smooth scroll k about sekci
+      setTimeout(() => {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  });
+}
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    aboutSection.classList.remove('open');
+    aboutSection.setAttribute('aria-hidden', 'true');
+    aboutBtn.setAttribute('aria-expanded', 'false');
+    aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    // Počkat až se sekce zavře (CSS animace 700ms), pak scroll
+    setTimeout(() => {
+      catalogTop.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 720);
+  });
+}
+
+// Back to top — zobrazí se po 400px scrollu
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.prod-img, .life-img, .slide-img').forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.preventDefault();
+    lightboxImg.src = img.dataset.full || img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+});
+</script>
+
+</body>
+</html>
