@@ -398,6 +398,11 @@ main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
 }
 
 .product-info {
+  /* flex: 1 — info zaplní celou zbývající výšku karty,
+     sloupcový layout umožní zarazit .product-meta na spodek (margin-top: auto) */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 24px 24px 28px;
   position: relative; z-index: 1;
 }
@@ -421,6 +426,8 @@ main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
   margin-bottom: 18px;
 }
 .product-meta {
+  /* zarovnání na spodek karty bez ohledu na délku popisku */
+  margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid var(--border);
 }
