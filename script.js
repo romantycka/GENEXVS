@@ -4,10 +4,12 @@ if (location.pathname.endsWith('/index.html')) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({
-        duration: 800,
-        once: true
-    });
+    if (window.AOS) {
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    }
 
     /* ---- Header (stín po odscrollování; na úvodu až za hero) ---- */
     const siteHeader = document.querySelector('.site-header');
