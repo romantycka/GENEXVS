@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katalog Ordinett — Genex VS</title>
+<meta name="description" content="Katalog produktů Ordinett — úložné boxy, organizéry, obaly na oděvy a vakuové systémy Easy Home. Distribuce GENEX VS, s.r.o.">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand-red: #1B5FAA;
+  --genex-blue: #1F2A5A;
+  --accent: #3B4673;
+  --bg: #f6f7f9;
+  --bg-card: #ffffff;
+  --text: #1a1814;
+  --text-soft: #6a5f50;
+  --text-mute: #a09888;
+  --border: #e8e6e3;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ===== HEADER (sjednocený se stávajícím webem GENEX VS) ===== */
+header {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000066;
+  letter-spacing: -0.03em;
+  z-index: 1001;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+header .logo-img { height: 50px; width: auto; display: block; }
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0; padding: 0;
+}
+header nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+header nav a:hover,
+header nav a.active { color: #000066; }
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+.mobile-menu-btn span {
+  display: block;
+  width: 25px; height: 3px;
+  background-color: #1a1a1a;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block; }
+  header nav {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 100%; height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+  header nav.active { right: 0; }
+  header nav ul { flex-direction: column; align-items: center; gap: 2rem; }
+  header nav a { font-size: 1.5rem; }
+  .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+}
+
+/* Odsazení obsahu pod fixní header */
+body { padding-top: 80px; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 64px 24px 32px;
+  max-width: 880px; margin: 0 auto;
+  text-align: center;
+}
+.hero-logo {
+  height: 72px; width: auto;
+  display: block; margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(27,95,170,0.18);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.hero-subtitle {
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: var(--text-soft);
+  max-width: 640px; margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.hero-subtitle strong { color: var(--genex-blue); font-weight: 600; }
+
+/* Tlačítka */
+.btn-primary, .btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--genex-blue);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(31,42,90,0.25);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31,42,90,0.32);
+}
+.btn-primary[aria-expanded="true"] .btn-arrow {
+  transform: rotate(180deg);
+}
+.btn-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--genex-blue);
+  border: 1px solid var(--genex-blue);
+}
+.btn-secondary:hover {
+  background: var(--genex-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== ABOUT — rozbalitelná sekce ===== */
+.about {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 24px;
+  /* Klíč pro plynulé rozbalení: max-height + transition */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, padding 0.5s ease;
+  scroll-margin-top: 90px;
+}
+.about.open {
+  max-height: 4000px;   /* dostatečně velký */
+  opacity: 1;
+  padding: 32px 24px 24px;
+}
+.about-inner {
+  background: linear-gradient(135deg, #f8f9fc 0%, #eef0f5 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .about-inner { grid-template-columns: 1.2fr 1fr; padding: 56px; }
+}
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  color: var(--genex-blue);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.about-text strong { color: var(--brand-red); font-weight: 600; }
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+.about-slides {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.about-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.slides-grid {
+  /* Slidy vertikálně pod sebou — velké, plně čitelné */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.slide {
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.slide:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.slide-img {
+  width: 100%; height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.slide:hover .slide-img { transform: scale(1.03); }
+.about-back {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 16px;
+}
+
+/* ===== BANNER mezi about a katalogem ===== */
+.catalog-banner {
+  max-width: 1280px;
+  margin: 56px auto 24px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* scroll-margin-top — kompenzuje sticky header (cca 72 px)
+     aby banner byl plně viditelný po scrollIntoView */
+  scroll-margin-top: 90px;
+}
+.banner-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.banner-text {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===== MAIN — souvislý grid produktů ===== */
+main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 720px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+.product {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  /* POZOR: žádné overflow: hidden zde — bránilo by tooltipům
+     vytékat z karty. Image area má vlastní overflow níže. */
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
+  position: relative;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: translateY(24px);
+}
+.product.visible { opacity: 1; transform: translateY(0); }
+.product::before {
+  content: attr(data-num);
+  position: absolute; top: 16px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 600;
+  color: rgba(0,0,0,0.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: #f0f0f0;
+  padding: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;  /* zachovat ořezání obrázků v zaoblených rozích */
+}
+.product-images:has(.img-life) { grid-template-columns: 38fr 62fr; }
+.img-main, .img-life {
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 1 / 0.85;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.img-life { aspect-ratio: 1 / 0.85; }
+.prod-img, .life-img {
+  width: 100%; height: 100%;
+  object-fit: contain; padding: 12px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.life-img { object-fit: cover; padding: 0; }
+.img-main:hover .prod-img, .img-life:hover .life-img {
+  transform: scale(1.06);
+}
+.placeholder {
+  width: 100%; height: 100%;
+  background: #eee; color: #999;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+.product-info {
+  /* flex: 1 — info zaplní celou zbývající výšku karty,
+     sloupcový layout umožní zarazit .product-meta na spodek (margin-top: auto) */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 28px;
+  position: relative; z-index: 1;
+}
+.cat-label {
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--brand-red);
+  margin-bottom: 8px;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.product-desc {
+  font-size: 14px; font-weight: 300;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.product-meta {
+  /* zarovnání na spodek karty bez ohledu na délku popisku */
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+.dims-label {
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.dims-value {
+  font-size: 13px; color: var(--text);
+  font-weight: 500;
+}
+.code {
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* ===== TOOLTIP pro patentované značky =====
+   PURE CSS — žádný JS. Hover/focus zobrazí bublinu.
+   .brand-tip = inline-block + position: relative (pro absolute child) */
+.brand-tip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dotted var(--brand-red);
+  cursor: help;
+  color: var(--text);
+  outline: none;
+}
+.brand-name-inline { font-weight: 500; }
+.brand-tip > sup {
+  color: var(--brand-red);
+  font-weight: 600;
+  font-size: 0.7em;
+  margin-left: 1px;
+}
+.tip-bubble {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  /* --tip-shift nastaví JS, když bublina vytéká za okraj displeje */
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(6px);
+  background: var(--genex-blue);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  width: max-content;
+  max-width: min(280px, 70vw);
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(31,42,90,0.25);
+}
+.tip-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  /* Šipka kompenzuje --tip-shift, takže pořád ukazuje na slovo */
+  left: calc(50% - var(--tip-shift, 0px));
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--genex-blue);
+}
+/* Open: hover (desktop), focus-within (klávesnice), .open (tap toggle z JS) */
+.brand-tip:hover .tip-bubble,
+.brand-tip:focus-within .tip-bubble,
+.brand-tip.open .tip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(0);
+}
+
+/* Mobile fallback — na úzkých displejích zúžit, JS dopočítá posun */
+@media (max-width: 720px) {
+  .tip-bubble {
+    max-width: min(240px, calc(100vw - 32px));
+    font-size: 11.5px;
+    padding: 9px 12px;
+  }
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
+  background: var(--genex-blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(31,42,90,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s, background 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.back-to-top:hover { background: var(--accent); }
+.back-to-top svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 640px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(20,20,30,0.92);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+}
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 95vw; max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox.active img { transform: scale(1); }
+.lightbox-close {
+  position: absolute; top: 24px; right: 24px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(90deg);
+}
+
+/* ===== FOOTER (sjednocený se stávajícím webem GENEX VS) ===== */
+footer {
+  background-color: #000066;
+  color: #fff;
+  padding: 4rem 0 2rem;
+  margin-top: 64px;
+}
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.footer-content p { margin: 0; }
+.footer-logo-img {
+  height: auto;
+  width: 150px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+.footer-copyright {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+.text-gray { color: #aaa; }
+.text-sm { font-size: 0.9rem; }
+.text-white { color: #ffffff !important; }
+.underline { text-decoration: underline !important; }
+.footer-copyright a { color: #ffffff !important; text-decoration: underline !important; }
+
+/* ===== UTILS ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="../../assets/logo_genex_velkoo_original.png" alt="GENEX VS" class="logo-img">
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primary-navigation" aria-label="Hlavní">
+      <ul>
+        <li><a href="/">Úvod</a></li>
+        <li><a href="/domaci-potreby/">Domácí potřeby</a></li>
+        <li><a href="/katalog/" class="active" aria-current="page">Katalog</a></li>
+        <li><a href="/o-spolecnosti/">O společnosti</a></li>
+        <li><a href="/kontakty/">Kontakty</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <img src="images/logo_ordinett.png" alt="ORDINETT" class="hero-logo">
+  <h1 class="hero-title">ORDINETT</h1>
+  <p class="hero-subtitle">Italský specialista na <strong>úložná řešení a organizaci domácnosti</strong> — protagonista mezinárodního trhu už více než 45 let. Boxy, organizéry, obaly na oděvy a vakuové systémy Easy Home.</p>
+  <button class="btn-primary" id="aboutBtn" aria-expanded="false" aria-controls="aboutSection">
+    <span>Více o firmě</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+</section>
+
+<!-- ABOUT — rozbalitelná sekce -->
+<section class="about" id="aboutSection" aria-hidden="true">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2 class="about-title">O značce Ordinett</h2>
+      <p>
+        <strong>Ordinett</strong> patří ke špičce v segmentu domácích úložných
+        řešení — originální odpovědi na stále častější problémy s organizací
+        domácího prostoru vyvíjí už <strong>více než 45 let</strong>.
+      </p>
+      <p>
+        Od roku 2009 je součástí italské skupiny <strong>Gio'Style</strong>.
+        Společně navrhují a vyrábějí v moderní továrně v Urgnanu (provincie
+        Bergamo) o rozloze přes <strong>100 000 m²</strong> se 60 výrobními
+        linkami pro domácnost i outdoor.
+      </p>
+      <p>
+        Sortiment pokrývá dva klíčové segmenty: <strong>úkládání a organizaci</strong>
+        — skládací a látkové boxy, ploché boxy pod postel, organizéry do zásuvek
+        a obaly na oděvy — a <strong>vakuování</strong> z řady Easy Home, které
+        snižuje objem uloženého textilu až o 75 %.
+      </p>
+    </div>
+    <div class="about-image"><img src="images/about_ordinett.jpg" alt="Sortiment Ordinett — boxy, organizéry a obaly na oděvy" loading="lazy"></div>
+  </div>
+
+  <div class="about-back">
+    <button class="btn-secondary" id="backBtn">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      <span>Zpět ke katalogu</span>
+    </button>
+  </div>
+</section>
+
+<!-- BANNER mezi about a katalogem -->
+<div class="catalog-banner" id="catalogTop">
+  <span class="banner-line"></span>
+  <span class="banner-text">Katalog produktů ORDINETT</span>
+  <span class="banner-line"></span>
+</div>
+
+<!-- KATALOG -->
+<main>
+  <div class="products-grid">
+            <article class="product" data-num="01">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848283001.png" alt="Box úložný skládací 31 l (M) — šedý" class="prod-img" data-full="images/848283001.png" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 31 l (M) — šedý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">48 × 36 × 19 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848283001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="02">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848383001.jpg" alt="Box úložný skládací 32 l (M) — modrý" class="prod-img" data-full="images/848383001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 32 l (M) — modrý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">48 × 36 × 19 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848383001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="03">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848283003.jpg" alt="Box úložný skládací 31 l — šedý" class="prod-img" data-full="images/848283003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 31 l — šedý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 31 × 25 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848283003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="04">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848383003.jpg" alt="Box úložný skládací 31 l — modrý" class="prod-img" data-full="images/848383003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 31 l — modrý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">41 × 31 × 25 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848383003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="05">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848283002.jpg" alt="Box úložný skládací 50 l (L) — šedý" class="prod-img" data-full="images/848283002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 50 l (L) — šedý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50 × 40 × 25 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848283002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="06">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848383002.jpg" alt="Box úložný skládací 50 l (L) — modrý" class="prod-img" data-full="images/848383002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný skládací 50 l (L) — modrý</h3>
+                <p class="product-desc">Skládací látkový box s víkem z netkané textilie. Průhledné okénko vpředu a dvě rukojeti po stranách — ideální pro oblečení, hračky a doplňky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50 × 40 × 25 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848383002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="07">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848234003.jpg" alt="Box úložný látkový 72 l — šedý" class="prod-img" data-full="images/848234003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný látkový 72 l — šedý</h3>
+                <p class="product-desc">Měkký látkový box z netkané textilie s rukojetí pro pohodlné přenášení. Chrání oblečení, přikrývky a ložní prádlo před prachem — ve skříni i pod postelí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">60 × 46 × 26 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848234003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="08">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848334003.jpg" alt="Box úložný látkový 72 l — modrý" class="prod-img" data-full="images/848334003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box úložný látkový 72 l — modrý</h3>
+                <p class="product-desc">Měkký látkový box z netkané textilie s rukojetí pro pohodlné přenášení. Chrání oblečení, přikrývky a ložní prádlo před prachem — ve skříni i pod postelí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">60 × 46 × 26 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848334003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="09">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848234004.jpg" alt="Box pod postel plochý 80 l — šedý" class="prod-img" data-full="images/848234004.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box pod postel plochý 80 l — šedý</h3>
+                <p class="product-desc">Plochý látkový kontejner z netkané textilie se zipem po obvodu a rukojetí. Určen pod postel — chrání oblečení, přikrývky a lůžkoviny před prachem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">107 × 50 × 15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848234004</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="10">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848334004.jpg" alt="Box pod postel plochý 90 l — modrý" class="prod-img" data-full="images/848334004.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úložné boxy</div>
+                <h3 class="product-name">Box pod postel plochý 90 l — modrý</h3>
+                <p class="product-desc">Plochý látkový kontejner z netkané textilie se zipem po obvodu a rukojetí. Určen pod postel — chrání oblečení, přikrývky a lůžkoviny před prachem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">120 × 50 × 15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848334004</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="11">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848335001.jpg" alt="Organizér do zásuvky — 3 přihrádky" class="prod-img" data-full="images/848335001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Organizéry</div>
+                <h3 class="product-name">Organizér do zásuvky — 3 přihrádky</h3>
+                <p class="product-desc">Organizér do zásuvky z netkané textilie se třemi přihrádkami. Vhodný pro kravaty, pásky, ponožky, šperky a drobnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30,5 × 15,5 × 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848335001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="12">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848335002.jpg" alt="Organizér do zásuvky — až 16 přihrádek" class="prod-img" data-full="images/848335002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Organizéry</div>
+                <h3 class="product-name">Organizér do zásuvky — až 16 přihrádek</h3>
+                <p class="product-desc">Modulární organizér do zásuvky z netkané textilie s nastavitelnou vnitřní strukturou — vytvoříte až 16 přihrádek pro ponožky, pásky, šperky a drobnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30,5 × 30,5 × 10 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848335002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="13">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848236001.jpg" alt="Organizér závěsný s 5 policemi — šedý" class="prod-img" data-full="images/848236001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Organizéry</div>
+                <h3 class="product-name">Organizér závěsný s 5 policemi — šedý</h3>
+                <p class="product-desc">Závěsný organizér z netkané textilie s pěti policemi na svetry, ručníky, pyžama či čepice. Zavěšení na šatní tyč pomocí smyčky — maximální využití svislého prostoru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">120 × 30 × 30 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848236001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="14">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848734003.jpg" alt="Chránič oděvů 95 × 62 cm (sada 4 ks)" class="prod-img" data-full="images/848734003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Chránič oděvů 95 × 62 cm (sada 4 ks)</h3>
+                <p class="product-desc">Sada čtyř průhledných ochranných obalů na bundy a kratší oblečení z polyetylenu. Chrání před prachem a nečistotami — ideální pro sezónní výměnu šatníku.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">62 × 95 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848734003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="15">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848734004.jpg" alt="Chránič oděvů 140 × 65 cm (sada 3 ks)" class="prod-img" data-full="images/848734004.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Chránič oděvů 140 × 65 cm (sada 3 ks)</h3>
+                <p class="product-desc">Sada tří průhledných ochranných obalů na kabáty a šaty z polyetylenu. Chrání před prachem a nečistotami — ideální pro sezónní výměnu šatníku.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">65 × 140 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848734004</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="16">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848134001.jpg" alt="Obal na oděvy 92 × 60 cm — bílý" class="prod-img" data-full="images/848134001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 92 × 60 cm — bílý</h3>
+                <p class="product-desc">Obal na saka a kratší oblečení z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">92 × 60 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848134001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="17">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848234001.jpg" alt="Obal na oděvy 100 × 60 cm — šedý" class="prod-img" data-full="images/848234001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 100 × 60 cm — šedý</h3>
+                <p class="product-desc">Obal na saka a oblečení z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">100 × 60 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848234001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="18">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848334001.jpg" alt="Obal na oděvy 100 × 65 cm — modrý" class="prod-img" data-full="images/848334001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 100 × 65 cm — modrý</h3>
+                <p class="product-desc">Obal na saka a oblečení z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">100 × 65 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848334001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="19">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848134002.jpg" alt="Obal na oděvy 135 × 60 cm — bílý" class="prod-img" data-full="images/848134002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 135 × 60 cm — bílý</h3>
+                <p class="product-desc">Obal na kabáty a šaty z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">135 × 60 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848134002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="20">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848234002.jpg" alt="Obal na oděvy 135 × 60 cm — šedý" class="prod-img" data-full="images/848234002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 135 × 60 cm — šedý</h3>
+                <p class="product-desc">Obal na kabáty a šaty z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">135 × 60 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848234002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="21">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848334002.jpg" alt="Obal na oděvy 135 × 65 cm — modrý" class="prod-img" data-full="images/848334002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Obaly na oděvy</div>
+                <h3 class="product-name">Obal na oděvy 135 × 65 cm — modrý</h3>
+                <p class="product-desc">Obal na kabáty a šaty z netkané textilie s průhledným okénkem pro snadnou identifikaci obsahu. Chrání před prachem v šatníku i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">135 × 65 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848334002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="22">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737016.jpg" alt="Pytel vakuový 85 × 55 cm (sada 2 ks)" class="prod-img" data-full="images/848737016.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový 85 × 55 cm (sada 2 ks)</h3>
+                <p class="product-desc">Sada dvou vakuových pytlů z polyetylenu s výkonným ventilem — funguje s každým vysavačem. Vodotěsné, chrání před prachem, vlhkostí a zápachem. Úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">55 × 85 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737016</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="23">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737015.jpg" alt="Pytel vakuový 100 × 70 cm (sada 2 ks)" class="prod-img" data-full="images/848737015.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový 100 × 70 cm (sada 2 ks)</h3>
+                <p class="product-desc">Sada dvou vakuových pytlů z polyetylenu s výkonným ventilem — funguje s každým vysavačem. Vodotěsné, chrání před prachem, vlhkostí a zápachem. Úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">70 × 100 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737015</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="24">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737014.jpg" alt="Pytel vakuový 120 × 80 cm (sada 2 ks)" class="prod-img" data-full="images/848737014.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový 120 × 80 cm (sada 2 ks)</h3>
+                <p class="product-desc">Sada dvou vakuových pytlů z polyetylenu s výkonným ventilem — funguje s každým vysavačem. Vodotěsné, chrání před prachem, vlhkostí a zápachem. Úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">80 × 120 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737014</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="25">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737007.jpg" alt="Pytel vakuový cestovní (sada 4 ks)" class="prod-img" data-full="images/848737007.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový cestovní (sada 4 ks)</h3>
+                <p class="product-desc">Sada čtyř cestovních vakuových pytlů bez ventilu — stačí srolovat pytel s obsahem. Dva kusy velikosti M a dva L. Vodotěsné, chrání před prachem, úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2× 60 × 40 + 2× 49 × 34 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737007</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="26">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737006.jpg" alt="Pytel vakuový kubický 75 × 55 × 40 cm" class="prod-img" data-full="images/848737006.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový kubický 75 × 55 × 40 cm</h3>
+                <p class="product-desc">Kubický vakuový pytel z polyetylenu s výkonným ventilem — ideální na přikrývky a peřiny. Vodotěsný, chrání před prachem a zápachem, opakovaně použitelný.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">55 × 75 × 40 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737006</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="27">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737004.jpg" alt="Pytel vakuový kubický 100 × 67 × 40 cm" class="prod-img" data-full="images/848737004.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový kubický 100 × 67 × 40 cm</h3>
+                <p class="product-desc">Kubický vakuový pytel z polyetylenu s výkonným ventilem — ideální na přikrývky a peřiny. Vodotěsný, chrání před prachem a zápachem, opakovaně použitelný.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">67 × 100 × 40 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737004</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="28">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737005.jpg" alt="Pytel vakuový kubický 105 × 75 × 44 cm" class="prod-img" data-full="images/848737005.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Pytel vakuový kubický 105 × 75 × 44 cm</h3>
+                <p class="product-desc">Velký kubický vakuový pytel z polyetylenu s výkonným ventilem — ideální na přikrývky a peřiny. Vodotěsný, chrání před prachem a zápachem, opakovaně použitelný.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">75 × 105 × 44 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737005</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="29">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737011.jpg" alt="Vak na oděvy vakuový 90 × 67 cm" class="prod-img" data-full="images/848737011.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Vak na oděvy vakuový 90 × 67 cm</h3>
+                <p class="product-desc">Vakuový obal na bundy a saka s výkonným ventilem kompatibilním s každým vysavačem. Vodotěsný, chrání před prachem a zápachem. Úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">67 × 90 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737011</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="30">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848737012.jpg" alt="Vak na oděvy vakuový 110 × 70 cm" class="prod-img" data-full="images/848737012.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Vak na oděvy vakuový 110 × 70 cm</h3>
+                <p class="product-desc">Vakuový obal na kabáty s výkonným ventilem kompatibilním s každým vysavačem. Vodotěsný, chrání před prachem a zápachem. Úspora místa až 75 %.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">70 × 110 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848737012</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="31">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848734005.jpg" alt="Vak na oděvy na zip 66 × 41 cm" class="prod-img" data-full="images/848734005.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Vak na oděvy na zip 66 × 41 cm</h3>
+                <p class="product-desc">Vak na prádlo a oblečení z materiálu PEVA bez PVC. Vodotěsný, lehký a bez zápachu, se zapínáním na zip.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">66 × 41 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848734005</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="32">
+              <div class="product-images">
+                <div class="img-main"><img src="images/848734002.jpg" alt="Vak na přikrývky 110 × 80 cm (sada 2 ks)" class="prod-img" data-full="images/848734002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Vakuování · Easy Home</div>
+                <h3 class="product-name">Vak na přikrývky 110 × 80 cm (sada 2 ks)</h3>
+                <p class="product-desc">Sada dvou průhledných pytlů na přikrývky a peřiny z polyetylenu. Zavíratelné a opakovaně použitelné — chrání před prachem při sezónním uskladnění.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">80 × 110 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 848734002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+  </div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Náhled obrázku">
+  <button class="lightbox-close" aria-label="Zavřít náhled">×</button>
+  <img src="" alt="">
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="/">
+          <img src="../../assets/logo_genex_white.png" alt="GENEX VS" class="footer-logo-img">
+        </a>
+        <h4>GENEX VS, s.r.o.</h4>
+        <p class="text-gray">Velkoobchod s tradicí od roku 2005.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p class="text-gray">genex@genexvs.cz<br>+420 730 893 126</p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 GENEX VS, s.r.o. Všechna práva vyhrazena.
+      <br>
+      <span class="text-sm text-gray">
+        Nepoužíváme analytické ani marketingové cookies. Pouze technické nutné pro provoz webu.
+        <a href="/zasady-ochrany-soukromi/" class="text-white underline">Více v zásadách.</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobilní menu (sjednoceno se stávajícím webem)
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const primaryNav = document.querySelector('header nav');
+if (mobileBtn && primaryNav) {
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileBtn.classList.toggle('active');
+    primaryNav.classList.toggle('active', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+}
+
+// Scroll animations — produkty se objeví při scrollu (staggered fade-in)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 0.04) + 's';
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.product').forEach(p => observer.observe(p));
+
+// Tooltip funguje přes pure CSS (:hover / :focus-within). Žádný JS.
+
+// ABOUT — toggle + scroll
+const aboutBtn = document.getElementById('aboutBtn');
+const aboutSection = document.getElementById('aboutSection');
+const backBtn = document.getElementById('backBtn');
+const catalogTop = document.getElementById('catalogTop');
+if (aboutBtn && aboutSection) {
+  aboutBtn.addEventListener('click', () => {
+    const isOpen = aboutSection.classList.contains('open');
+    if (isOpen) {
+      aboutSection.classList.remove('open');
+      aboutSection.setAttribute('aria-hidden', 'true');
+      aboutBtn.setAttribute('aria-expanded', 'false');
+      aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    } else {
+      aboutSection.classList.add('open');
+      aboutSection.setAttribute('aria-hidden', 'false');
+      aboutBtn.setAttribute('aria-expanded', 'true');
+      aboutBtn.querySelector('span').textContent = 'Skrýt informace';
+      // smooth scroll k about sekci
+      setTimeout(() => {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  });
+}
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    aboutSection.classList.remove('open');
+    aboutSection.setAttribute('aria-hidden', 'true');
+    aboutBtn.setAttribute('aria-expanded', 'false');
+    aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    // Počkat až se sekce zavře (CSS animace 700ms), pak scroll
+    setTimeout(() => {
+      catalogTop.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 720);
+  });
+}
+
+// Back to top — zobrazí se po 400px scrollu
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.prod-img, .life-img, .slide-img').forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.preventDefault();
+    lightboxImg.src = img.dataset.full || img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+});
+
+// TOOLTIP — tap-toggle + clamp bubliny do viewportu (CSS centrované,
+// ale když je trigger u okraje, bublina vytéká → JS dopočítá --tip-shift)
+const brandTips = document.querySelectorAll('.brand-tip');
+
+function clampTipBubble(tip) {
+  const bubble = tip.querySelector('.tip-bubble');
+  if (!bubble) return;
+  bubble.style.setProperty('--tip-shift', '0px');
+  // počkáme na layout, pak změříme
+  requestAnimationFrame(() => {
+    const rect = bubble.getBoundingClientRect();
+    const margin = 8;
+    let shift = 0;
+    if (rect.right > window.innerWidth - margin) {
+      shift = -(rect.right - (window.innerWidth - margin));
+    } else if (rect.left < margin) {
+      shift = margin - rect.left;
+    }
+    bubble.style.setProperty('--tip-shift', shift + 'px');
+  });
+}
+
+const closeAllTips = () => brandTips.forEach(t => {
+  t.classList.remove('open');
+  const b = t.querySelector('.tip-bubble');
+  if (b) b.style.removeProperty('--tip-shift');
+  if (document.activeElement === t) t.blur();
+});
+
+brandTips.forEach(tip => {
+  tip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const wasOpen = tip.classList.contains('open');
+    closeAllTips();
+    if (!wasOpen) {
+      tip.classList.add('open');
+      clampTipBubble(tip);
+    }
+  });
+  // Hover na desktopu — clamp taky, kdyby trigger byl u okraje
+  tip.addEventListener('mouseenter', () => clampTipBubble(tip));
+  tip.addEventListener('focus', () => clampTipBubble(tip));
+});
+
+// Tap mimo libovolnou bublinu ji zavře
+document.addEventListener('click', closeAllTips);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAllTips();
+});
+
+// Po resize/scroll přepočítej otevřenou bublinu
+let tipReclampScheduled = false;
+function reclampOpenTip() {
+  if (tipReclampScheduled) return;
+  tipReclampScheduled = true;
+  requestAnimationFrame(() => {
+    tipReclampScheduled = false;
+    const openTip = document.querySelector('.brand-tip.open');
+    if (openTip) clampTipBubble(openTip);
+  });
+}
+window.addEventListener('resize', reclampOpenTip);
+window.addEventListener('scroll', reclampOpenTip, { passive: true });
+</script>
+
+</body>
+</html>
