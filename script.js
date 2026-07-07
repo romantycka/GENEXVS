@@ -1,8 +1,33 @@
+/* Čistá URL — skrýt "index.html" z adresního řádku */
+if (location.pathname.endsWith('/index.html')) {
+    history.replaceState(null, '', location.pathname.slice(0, -10) + location.search + location.hash);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
         duration: 800,
         once: true
     });
+
+    /* ---- Header (stín po odscrollování; na úvodu až za hero) ---- */
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        const hasHero = !!document.querySelector('.hero-bg');
+        const onHeaderScroll = () => {
+            const threshold = hasHero ? window.innerHeight - 100 : 10;
+            siteHeader.classList.toggle('scrolled', window.scrollY > threshold);
+        };
+        onHeaderScroll();
+        window.addEventListener('scroll', onHeaderScroll, { passive: true });
+    }
+
+    /* ---- Scroll cue (šipka na hero) ---- */
+    const scrollCue = document.querySelector('.scroll-cue');
+    if (scrollCue) {
+        scrollCue.addEventListener('click', () => {
+            window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+        });
+    }
 
     /* ---- Mobile Menu ---- */
     const mobileBtn = document.querySelector('.mobile-menu-btn');
