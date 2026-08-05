@@ -1,0 +1,3947 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Katalog Plastic Forte — Genex VS</title>
+<meta name="description" content="Katalog produktů Plastic Forte — úložné boxy, kuchyňské dózy, koupelnové doplňky, odpadkové koše, rozprašovače, květináče a potřeby na zahradu. Distribuce GENEX VS, s.r.o.">
+<link rel="icon" href="../../assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --brand-red: #DE040F;
+  --genex-blue: #1F2A5A;
+  --accent: #3B4673;
+  --bg: #f6f7f9;
+  --bg-card: #ffffff;
+  --text: #1a1814;
+  --text-soft: #6a5f50;
+  --text-mute: #a09888;
+  --border: #e8e6e3;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+/* ===== HEADER (sjednocený se stávajícím webem GENEX VS) ===== */
+header {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000066;
+  letter-spacing: -0.03em;
+  z-index: 1001;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+header .logo-img { height: 50px; width: auto; display: block; }
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0; padding: 0;
+}
+header nav a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+header nav a:hover,
+header nav a.active { color: #000066; }
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+.mobile-menu-btn span {
+  display: block;
+  width: 25px; height: 3px;
+  background-color: #1a1a1a;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block; }
+  header nav {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 100%; height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+  header nav.active { right: 0; }
+  header nav ul { flex-direction: column; align-items: center; gap: 2rem; }
+  header nav a { font-size: 1.5rem; }
+  .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+  .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+}
+
+/* Odsazení obsahu pod fixní header */
+body { padding-top: 80px; }
+
+/* ===== HERO ===== */
+.hero {
+  padding: 64px 24px 32px;
+  max-width: 880px; margin: 0 auto;
+  text-align: center;
+}
+.hero-logo {
+  height: 72px; width: auto;
+  display: block; margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(222,4,15,0.18);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.hero-subtitle {
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: var(--text-soft);
+  max-width: 640px; margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.hero-subtitle strong { color: var(--genex-blue); font-weight: 600; }
+
+/* Tlačítka */
+.btn-primary, .btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 100px;
+  font-size: 14px; font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.btn-primary {
+  background: var(--genex-blue);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(31,42,90,0.25);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(31,42,90,0.32);
+}
+.btn-primary[aria-expanded="true"] .btn-arrow {
+  transform: rotate(180deg);
+}
+.btn-arrow {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--genex-blue);
+  border: 1px solid var(--genex-blue);
+}
+.btn-secondary:hover {
+  background: var(--genex-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== ABOUT — rozbalitelná sekce ===== */
+.about {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 24px;
+  /* Klíč pro plynulé rozbalení: max-height + transition */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, padding 0.5s ease;
+  scroll-margin-top: 90px;
+}
+.about.open {
+  max-height: 4000px;   /* dostatečně velký */
+  opacity: 1;
+  padding: 32px 24px 24px;
+}
+.about-inner {
+  background: linear-gradient(135deg, #f8f9fc 0%, #eef0f5 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .about-inner { grid-template-columns: 1.2fr 1fr; padding: 56px; }
+}
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 600;
+  color: var(--genex-blue);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.about-text p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.about-text strong { color: var(--brand-red); font-weight: 600; }
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+.about-slides {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+.about-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.slides-grid {
+  /* Slidy vertikálně pod sebou — velké, plně čitelné */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.slide {
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.slide:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.slide-img {
+  width: 100%; height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.slide:hover .slide-img { transform: scale(1.03); }
+.about-back {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 16px;
+}
+
+/* ===== BANNER mezi about a katalogem ===== */
+.catalog-banner {
+  max-width: 1280px;
+  margin: 56px auto 24px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* scroll-margin-top — kompenzuje sticky header (cca 72 px)
+     aby banner byl plně viditelný po scrollIntoView */
+  scroll-margin-top: 90px;
+}
+.banner-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.banner-text {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand-red);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ===== MAIN — souvislý grid produktů ===== */
+main { max-width: 1280px; margin: 0 auto; padding: 0 24px 64px; }
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 720px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1280px) {
+  .products-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+
+.product {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  /* POZOR: žádné overflow: hidden zde — bránilo by tooltipům
+     vytékat z karty. Image area má vlastní overflow níže. */
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.6s ease;
+  position: relative;
+  display: flex; flex-direction: column;
+  opacity: 0; transform: translateY(24px);
+}
+.product.visible { opacity: 1; transform: translateY(0); }
+.product::before {
+  content: attr(data-num);
+  position: absolute; top: 16px; right: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 72px; font-weight: 600;
+  color: rgba(0,0,0,0.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  background: #f0f0f0;
+  padding: 2px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;  /* zachovat ořezání obrázků v zaoblených rozích */
+}
+.product-images:has(.img-life) { grid-template-columns: 38fr 62fr; }
+.img-main, .img-life {
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  aspect-ratio: 1 / 0.85;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+.img-life { aspect-ratio: 1 / 0.85; }
+.prod-img, .life-img {
+  width: 100%; height: 100%;
+  object-fit: contain; padding: 12px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.life-img { object-fit: cover; padding: 0; }
+.img-main:hover .prod-img, .img-life:hover .life-img {
+  transform: scale(1.06);
+}
+.placeholder {
+  width: 100%; height: 100%;
+  background: #eee; color: #999;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+
+.product-info {
+  /* flex: 1 — info zaplní celou zbývající výšku karty,
+     sloupcový layout umožní zarazit .product-meta na spodek (margin-top: auto) */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 28px;
+  position: relative; z-index: 1;
+}
+.cat-label {
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--brand-red);
+  margin-bottom: 8px;
+}
+.product-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.product-desc {
+  font-size: 14px; font-weight: 300;
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.product-meta {
+  /* zarovnání na spodek karty bez ohledu na délku popisku */
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.meta-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+.dims-label {
+  font-size: 10px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.dims-value {
+  font-size: 13px; color: var(--text);
+  font-weight: 500;
+}
+.code {
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+
+/* ===== TOOLTIP pro patentované značky =====
+   PURE CSS — žádný JS. Hover/focus zobrazí bublinu.
+   .brand-tip = inline-block + position: relative (pro absolute child) */
+.brand-tip {
+  display: inline-block;
+  position: relative;
+  border-bottom: 1px dotted var(--brand-red);
+  cursor: help;
+  color: var(--text);
+  outline: none;
+}
+.brand-name-inline { font-weight: 500; }
+.brand-tip > sup {
+  color: var(--brand-red);
+  font-weight: 600;
+  font-size: 0.7em;
+  margin-left: 1px;
+}
+.tip-bubble {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  /* --tip-shift nastaví JS, když bublina vytéká za okraj displeje */
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(6px);
+  background: var(--genex-blue);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  width: max-content;
+  max-width: min(280px, 70vw);
+  white-space: normal;
+  text-align: left;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(31,42,90,0.25);
+}
+.tip-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  /* Šipka kompenzuje --tip-shift, takže pořád ukazuje na slovo */
+  left: calc(50% - var(--tip-shift, 0px));
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--genex-blue);
+}
+/* Open: hover (desktop), focus-within (klávesnice), .open (tap toggle z JS) */
+.brand-tip:hover .tip-bubble,
+.brand-tip:focus-within .tip-bubble,
+.brand-tip.open .tip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(0);
+}
+
+/* Mobile fallback — na úzkých displejích zúžit, JS dopočítá posun */
+@media (max-width: 720px) {
+  .tip-bubble {
+    max-width: min(240px, calc(100vw - 32px));
+    font-size: 11.5px;
+    padding: 9px 12px;
+  }
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
+  background: var(--genex-blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 24px rgba(31,42,90,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s, background 0.2s ease;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+.back-to-top:hover { background: var(--accent); }
+.back-to-top svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+@media (max-width: 640px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(20,20,30,0.92);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: zoom-out;
+}
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 95vw; max-height: 92vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightbox.active img { transform: scale(1); }
+.lightbox-close {
+  position: absolute; top: 24px; right: 24px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+  transform: rotate(90deg);
+}
+
+/* ===== FOOTER (sjednocený se stávajícím webem GENEX VS) ===== */
+footer {
+  background-color: #000066;
+  color: #fff;
+  padding: 4rem 0 2rem;
+  margin-top: 64px;
+}
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.footer-content h4 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.footer-content p { margin: 0; }
+.footer-logo-img {
+  height: auto;
+  width: 150px;
+  max-width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+.footer-copyright {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+.text-gray { color: #aaa; }
+.text-sm { font-size: 0.9rem; }
+.text-white { color: #ffffff !important; }
+.underline { text-decoration: underline !important; }
+.footer-copyright a { color: #ffffff !important; text-decoration: underline !important; }
+
+/* ===== UTILS ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="../../assets/logo_genex_velkoo_original.png" alt="GENEX VS" class="logo-img">
+    </a>
+    <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="primary-navigation" aria-label="Hlavní">
+      <ul>
+        <li><a href="/">Úvod</a></li>
+        <li><a href="/domaci-potreby/">Domácí potřeby</a></li>
+        <li><a href="/katalog/" class="active" aria-current="page">Katalog</a></li>
+        <li><a href="/o-spolecnosti/">O společnosti</a></li>
+        <li><a href="/kontakty/">Kontakty</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero fade-in">
+  <img src="images/logo_plasticforte.png" alt="Plastic Forte" class="hero-logo">
+  <h1 class="hero-title">Plastic Forte</h1>
+  <p class="hero-subtitle">Praktická a elegantní plastová řešení pro <strong>domácnost, kuchyni, koupelnu, úklid i zahradu</strong> od španělské rodinné značky <strong>Plastic Forte</strong>.</p>
+  <button class="btn-primary" id="aboutBtn" aria-expanded="false" aria-controls="aboutSection">
+    <span>Více o firmě</span>
+    <svg class="btn-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  </button>
+</section>
+
+<!-- ABOUT — rozbalitelná sekce -->
+<section class="about" id="aboutSection" aria-hidden="true">
+  <div class="about-inner" style="grid-template-columns:1fr">
+    <div class="about-text">
+      <h2 class="about-title">O značce Plastic Forte</h2>
+      <p>
+        Značka <strong>Plastic Forte</strong> je spolehlivým partnerem pro
+        každodenní organizaci, úklid i pěstování. Za ní stojí stabilní
+        <strong>španělská rodinná společnost</strong> Albero Forte Composite,
+        S.L.U. (Grupo Albero Forte), která má moderní výrobní kapacity
+        v provincii Alicante a odtud zásobuje domácnosti po celé Evropě.
+      </p>
+      <p>
+        Výrobce se dlouhodobě specializuje na <strong>precizní vstřikování
+        plastů</strong> s vlastními formami a exkluzivním designem. Výsledkem
+        je neustále se rozšiřující sortiment — od chytrých úložných boxů
+        a kuchyňských dóz, přes koupelnové doplňky a odpadkové koše, až po
+        květináče a potřeby na zahradu. Každý produkt je navržen s ohledem
+        na maximální funkčnost, dlouhou životnost a moderní vzhled.
+      </p>
+      <p>
+        Velký důraz klade značka na <strong>bezpečnost materiálů</strong> —
+        vybraný sortiment je certifikován pro styk s potravinami a výroba
+        probíhá podle přísných evropských standardů s testováním v nezávislých
+        laboratořích. Díky pestré paletě barev a promyšlených tvarů snadno
+        sladíte tyto doplňky s jakýmkoliv interiérem, a to za velmi dostupnou cenu.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-back">
+    <button class="btn-secondary" id="backBtn">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+      <span>Zpět ke katalogu</span>
+    </button>
+  </div>
+</section>
+
+<!-- BANNER mezi about a katalogem -->
+<div class="catalog-banner" id="catalogTop">
+  <span class="banner-line"></span>
+  <span class="banner-text">Katalog produktů Plastic Forte</span>
+  <span class="banner-line"></span>
+</div>
+
+<!-- KATALOG -->
+<main>
+  <div class="products-grid">
+            <article class="product" data-num="01">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100030.jpg" alt="Spony na sáčky 6ks" class="prod-img" data-full="images/135100030.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Spony na sáčky 6ks</h3>
+                <p class="product-desc">Sada 6 spon na uzavírání sáčků o délce 6,5 cm. Spolehlivě utěsní načaté potraviny, udrží je čerstvé a chrání před vlhkostí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">6,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100030</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="02">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100040.jpg" alt="Spony na sáčky 6ks" class="prod-img" data-full="images/135100040.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Spony na sáčky 6ks</h3>
+                <p class="product-desc">Sada 6 delších spon 10,5 cm pro širší sáčky s pečivem, moukou nebo mraženou zeleninou. Snadno se nasazují i sundávají.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">10,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100040</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="03">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100050.jpg" alt="Spony na sáčky 12ks" class="prod-img" data-full="images/135100050.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Spony na sáčky 12ks</h3>
+                <p class="product-desc">Praktická sada 12 spon ve dvou velikostech (6,5 a 8,5 cm) pro každodenní uzavírání sáčků v kuchyni i mrazáku.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">6,5+8,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100050</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="04">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100101.jpg" alt="Box na 10 vajec barevný" class="prod-img" data-full="images/135100101.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box na 10 vajec barevný</h3>
+                <p class="product-desc">Barevný box na 10 vajec z odolného plastu. Bezpečně uchová vejce v lednici i na cestách a přehledně je zorganizuje.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27x13x7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100101</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="05">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100102.jpg" alt="Box na 10 vajec čirý" class="prod-img" data-full="images/135100102.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box na 10 vajec čirý</h3>
+                <p class="product-desc">Čirý box na 10 vajec s viditelným obsahem. Chrání vejce před poškozením a šetří místo v lednici.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27x13x7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100102</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="06">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100103.jpg" alt="Box na 12 vajec barevný" class="prod-img" data-full="images/135100103.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box na 12 vajec barevný</h3>
+                <p class="product-desc">Barevný box na 12 vajec s kompaktními, téměř čtvercovými rozměry. Vejce přehledně uspořádá do mřížky 3 × 4 a bezpečně je ochrání v lednici i na cestách.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">20x19x7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100103</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="07">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100104.jpg" alt="Box na 6 vajec čirý" class="prod-img" data-full="images/135100104.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box na 6 vajec čirý</h3>
+                <p class="product-desc">Čirý box na 6 vajec, ideální pro menší domácnosti. Vejce zůstanou chráněná a přehledně po ruce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">17,5x13x7 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100104</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="08">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100110.jpg" alt="Box kulatý, šroubovací" class="prod-img" data-full="images/135100110.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box kulatý, šroubovací</h3>
+                <p class="product-desc">Kulatá dóza 570 ml se šroubovacím víčkem. Vzduchotěsně uchová sypké potraviny, koření nebo zbytky jídla.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">570ml · d11x8,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100110</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="09">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100111.jpg" alt="Box kulatý, šroubovací" class="prod-img" data-full="images/135100111.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box kulatý, šroubovací</h3>
+                <p class="product-desc">Větší kulatá dóza 790 ml se šroubovacím víčkem pro přehledné skladování potravin ve spíži i lednici.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">790ml · d11x11,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100111</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="10">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100120.jpg" alt="Box (2ks)" class="prod-img" data-full="images/135100120.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box (2ks)</h3>
+                <p class="product-desc">Sada 2 boxů 320 ml na uchovávání potravin. Vhodné do lednice i mrazáku, snadno se stohují.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">320ml · 11,5x11,5x5,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="11">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100121.jpg" alt="Box (3ks)" class="prod-img" data-full="images/135100121.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box (3ks)</h3>
+                <p class="product-desc">Sada 3 boxů 250 ml pro přehledné rozdělení menších porcí a svačin. Úsporné a praktické.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">250ml · 11,5x8x8,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100121</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="12">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100125.jpg" alt="Box LUNCH No.1 dělený" class="prod-img" data-full="images/135100125.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box LUNCH No.1 dělený</h3>
+                <p class="product-desc">Svačinový box LUNCH No.1 s objemem 725 ml a dělenou vložkou. Oddělí jednotlivé chody a udrží jídlo v čerstvém stavu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">725ml · 18x15,5x5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100125</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="13">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100126.jpg" alt="Box LUNCH No.3 dělený" class="prod-img" data-full="images/135100126.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Box LUNCH No.3 dělený</h3>
+                <p class="product-desc">Prostorný svačinový box LUNCH No.3 (1220 ml) s dělením. Ideální na oběd do práce, školy i na výlet.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">1220ml · 20x20x6 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100126</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="14">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100170.jpg" alt="Miska na rozmrazování" class="prod-img" data-full="images/135100170.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Miska na rozmrazování</h3>
+                <p class="product-desc">Miska na rychlé rozmrazování potravin 35x28 cm. Urychluje rozmrazení bez použití elektřiny a mikrovlnky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35x28x6 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100170</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="15">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100171.jpg" alt="Miska na rozmrazování ovál" class="prod-img" data-full="images/135100171.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Kuchyně a potraviny</div>
+                <h3 class="product-name">Miska na rozmrazování ovál</h3>
+                <p class="product-desc">Oválná miska na rozmrazování 32x21,5 cm. Šetrně a rychle rozmrazí maso i další potraviny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">32x21,5x6 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100171</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="16">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100201.jpg" alt="Džbán s víčkem, stupnice MIX barev" class="prod-img" data-full="images/135100201.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Džbán s víčkem, stupnice MIX barev</h3>
+                <p class="product-desc">Džbán 1 l s víčkem a stupnicí objemu. Ideální na vodu, šťávy i domácí limonády, dodáváno v mixu barev.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">1l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100201</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="17">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100202.jpg" alt="Džbán s víčkem, stupnice MIX barev" class="prod-img" data-full="images/135100202.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Džbán s víčkem, stupnice MIX barev</h3>
+                <p class="product-desc">Džbán 2 l s víčkem a měrnou stupnicí pro celou rodinu. Praktický tvar dobře padne do ruky, mix barev.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100202</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="18">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100204.jpg" alt="Džbán SERVI výkl. víčko, stupnice MIX barev" class="prod-img" data-full="images/135100204.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Džbán SERVI výkl. víčko, stupnice MIX barev</h3>
+                <p class="product-desc">Džbán 2 l SERVI s výklopným víčkem a stupnicí. Umožňuje pohodlné nalévání jednou rukou, mix barev.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100204</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="19">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100270.jpg" alt="Spona na ubrus 12ks bílá" class="prod-img" data-full="images/135100270.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Spona na ubrus 12ks bílá</h3>
+                <p class="product-desc">Sada 12 bílých spon na ubrus. Udrží ubrus na místě i ve větru, ideální na terasu a zahradu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135100270</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="20">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100273.jpg" alt="Slánka+pepřenka sklo" class="prod-img" data-full="images/135100273.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Slánka+pepřenka sklo</h3>
+                <p class="product-desc">Elegantní sada slánky a pepřenky ze skla a plastu, výška 9 cm. Stylový doplněk na každý stůl.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d3x9cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100273</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="21">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100280.jpg" alt="Nálevka" class="prod-img" data-full="images/135100280.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Nálevka</h3>
+                <p class="product-desc">Plastová nálevka o průměru 21 cm pro snadné přelévání tekutin i sypkých hmot bez rozlití.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100280</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="22">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100355.jpg" alt="Kelímek DURITKA" class="prod-img" data-full="images/135100355.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Kelímek DURITKA</h3>
+                <p class="product-desc">Kelímek DURITKA 0,25 l z odolného plastu. Praktický na kempink, k bazénu i na zahradu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,25l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100355</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="23">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100500.jpg" alt="Odkapávač nádobí MŘÍŽKA" class="prod-img" data-full="images/135100500.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Odkapávač nádobí MŘÍŽKA</h3>
+                <p class="product-desc">Odkapávač nádobí MŘÍŽKA 39x30 cm. Plochý tvar šetří místo a nechá nádobí přirozeně oschnout.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">39x30x1 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100500</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="24">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100503.jpg" alt="Odkapávač nádobí MEDIUM" class="prod-img" data-full="images/135100503.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Odkapávač nádobí MEDIUM</h3>
+                <p class="product-desc">Odkapávač nádobí MEDIUM 45x26 cm s vyšším okrajem. Pojme talíře i příbory a odvádí vodu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">45x26x9 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100503</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="25">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100721.jpg" alt="Lžíce PIKNIKOVÁ SURT (6ks)" class="prod-img" data-full="images/135100721.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Lžíce PIKNIKOVÁ SURT (6ks)</h3>
+                <p class="product-desc">Sada 6 piknikových lžic SURT. Lehké a odolné, ideální na výlety, grilování i kempink.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135100721</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="26">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135115001.jpg" alt="Cedník na zeleninu a těstoviny" class="prod-img" data-full="images/135115001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Cedník na zeleninu a těstoviny</h3>
+                <p class="product-desc">Cedník na zeleninu a těstoviny o průměru 18 cm. Rychle scedí vodu a hodí se i na mytí ovoce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d18cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135115001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="27">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135115200.jpg" alt="Láhev dávkovací (ocet,olej, dochucovadla)" class="prod-img" data-full="images/135115200.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Láhev dávkovací (ocet,olej, dochucovadla)</h3>
+                <p class="product-desc">Dávkovací láhev 175 ml na ocet, olej a dochucovadla. Přesné dávkování bez kapání.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">175ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135115200</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="28">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135115201.jpg" alt="Láhev dávkovací s měrkou" class="prod-img" data-full="images/135115201.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Láhev dávkovací s měrkou</h3>
+                <p class="product-desc">Dávkovací láhev 250 ml s měrkou. Přehledné dávkování tekutin přímo při vaření.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">250 ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135115201</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="29">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135120005.jpg" alt="Podnos CRYSTAL transparent" class="prod-img" data-full="images/135120005.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Podnos CRYSTAL transparent</h3>
+                <p class="product-desc">Transparentní podnos CRYSTAL 15x28,5 cm. Elegantní servírování pohárků, kávy i drobného občerstvení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">15x28,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135120005</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="30">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135120100.jpg" alt="Miska kompot. s uchy" class="prod-img" data-full="images/135120100.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Nápoje a servírování</div>
+                <h3 class="product-name">Miska kompot. s uchy</h3>
+                <p class="product-desc">Kompotová miska 0,37 l s oušky. Vhodná na kompot, dezerty i svačinu, snadno se drží.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d11,5 cm · 0,37l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135120100</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="31">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100291.jpg" alt="Tvořítka na 4ks nanuků FIYI" class="prod-img" data-full="images/135100291.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Tvořítka na 4ks nanuků FIYI</h3>
+                <p class="product-desc">Tvořítko FIYI na 4 nanuky. Připravte si domácí zmrzlinu z ovoce a šťáv podle vlastní chuti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135100291</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="32">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100304.jpg" alt="Forma na led s víkem 12kostek" class="prod-img" data-full="images/135100304.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Forma na led s víkem 12kostek</h3>
+                <p class="product-desc">Forma na led s víkem na 12 kostek. Víko chrání led před pachy z mrazáku a usnadňuje skladování.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">11x28x4 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100304</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="33">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100307.jpg" alt="Forma na led 26koulí" class="prod-img" data-full="images/135100307.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Forma na led 26koulí</h3>
+                <p class="product-desc">Forma na 26 ledových koulí. Efektní kulaté kostky ledu do drinků i nealko nápojů.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12,5x24x3,2 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100307</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="34">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100309.jpg" alt="Forma na led 50kostek MOJITO" class="prod-img" data-full="images/135100309.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Forma na led 50kostek MOJITO</h3>
+                <p class="product-desc">Forma MOJITO na 50 malých kostek ledu. Ideální pro míchané nápoje a rychlé chlazení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">13x25,5x2,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100309</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="35">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100320.jpg" alt="Vložka chladící č.5" class="prod-img" data-full="images/135100320.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Vložka chladící č.5</h3>
+                <p class="product-desc">Chladící vložka č.5 (260 g) do chladicích tašek a boxů. Dlouho udrží nízkou teplotu potravin i nápojů.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">260g · 10,5x2x13,2 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100320</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="36">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100321.jpg" alt="Vložka chladící č.7" class="prod-img" data-full="images/135100321.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Vložka chladící č.7</h3>
+                <p class="product-desc">Velká chladící vložka č.7 (500 g) pro delší výlety a nákupy. Spolehlivě uchová chlad.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">500g · 10,5x2,5x20 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100321</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="37">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100322.jpg" alt="Vložka chladící č.3" class="prod-img" data-full="images/135100322.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Led a chlazení</div>
+                <h3 class="product-name">Vložka chladící č.3</h3>
+                <p class="product-desc">Sada 2 malých chladících vložek (2x100 g) do svačinových boxů a menších tašek.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2x100g · 7,3x4,5x8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100322</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="38">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100340.jpg" alt="Hrníček dětský" class="prod-img" data-full="images/135100340.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Pro děti</div>
+                <h3 class="product-name">Hrníček dětský</h3>
+                <p class="product-desc">Dětský hrníček 320 ml z odolného plastu. Lehký, nerozbitný a příjemný do dětské ruky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">320ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100340</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="39">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100341.jpg" alt="Hrníček dětský" class="prod-img" data-full="images/135100341.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Pro děti</div>
+                <h3 class="product-name">Hrníček dětský</h3>
+                <p class="product-desc">Dětský hrníček 350 ml pro každodenní pití. Bezpečný materiál a veselé provedení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">350ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100341</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="40">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135015786.jpg" alt="Sada dětských cestovních rozprašovačů" class="prod-img" data-full="images/135015786.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Pro děti</div>
+                <h3 class="product-name">Sada dětských cestovních rozprašovačů</h3>
+                <p class="product-desc">Sada dvou dětských cestovních rozprašovačů (55 ml + 30 ml). Ideální na vodu i osvěžení na výletě, snadno se plní a dobře drží v malé ruce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">55ml · 30ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135015786</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="41">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200201.jpg" alt="Nočník dětský MIX barev" class="prod-img" data-full="images/135200201.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Pro děti</div>
+                <h3 class="product-name">Nočník dětský MIX barev</h3>
+                <p class="product-desc">Dětský nočník v mixu barev. Stabilní tvar, hladký omyvatelný povrch a příjemné zpracování pro pohodlí nejmenších.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135200201</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="42">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200120.jpg" alt="Mýdlenka barevná" class="prod-img" data-full="images/135200120.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Mýdlenka barevná</h3>
+                <p class="product-desc">Barevná mýdlenka 9x14 cm s odtokem vody. Udrží mýdlo suché a prodlouží jeho životnost.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">9x14x2,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="43">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200151.jpg" alt="Krabička na mýdlo FORTE barevná" class="prod-img" data-full="images/135200151.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Krabička na mýdlo FORTE barevná</h3>
+                <p class="product-desc">Cestovní krabička na mýdlo FORTE 12x8 cm. Chrání mýdlo na cestách a nezabere mnoho místa.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12x8x5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200151</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="44">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200801.jpg" alt="Dávkovač na léky dvoudílný" class="prod-img" data-full="images/135200801.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Dávkovač na léky dvoudílný</h3>
+                <p class="product-desc">Dvoudílný dávkovač na léky. Přehledně roztřídí tablety podle dní nebo denní doby.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">9x7x3 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200801</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="45">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100520.jpg" alt="Organizér dělený do kuchyně / koupelny" class="prod-img" data-full="images/135100520.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Organizér dělený do kuchyně / koupelny</h3>
+                <p class="product-desc">Dělený organizér do kuchyně i koupelny. Přehledně roztřídí příbory, kosmetiku nebo drobnosti a udrží pořádek v zásuvce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">14x26x8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100520</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="46">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200100.jpg" alt="Dávkovač mýdla barevný" class="prod-img" data-full="images/135200100.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Dávkovač mýdla barevný</h3>
+                <p class="product-desc">Barevný dávkovač mýdla 0,4 l. Praktická pumpička pro přesné dávkování tekutého mýdla, hezký doplněk k umyvadlu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,4l · d8x16 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200100</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="47">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200150.jpg" alt="Krabička na mýdlo transparentní" class="prod-img" data-full="images/135200150.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Krabička na mýdlo transparentní</h3>
+                <p class="product-desc">Transparentní krabička na mýdlo s odtokem vody. Udrží mýdlo suché a je ideální i na cesty.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12x8x5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200150</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="48">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200170.jpg" alt="WC souprava JASPED" class="prod-img" data-full="images/135200170.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">WC souprava JASPED</h3>
+                <p class="product-desc">WC souprava JASPED — štětka s stojánkem v decentním provedení. Nenápadně doplní každou toaletu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135200170</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="49">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200171.jpg" alt="WC souprava JASPED MIX" class="prod-img" data-full="images/135200171.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">WC souprava JASPED MIX</h3>
+                <p class="product-desc">WC souprava JASPED v mixu barev. Kombinace štětky a stojánku, která oživí interiér koupelny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135200171</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="50">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200172.jpg" alt="WC souprava WHITE" class="prod-img" data-full="images/135200172.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">WC souprava WHITE</h3>
+                <p class="product-desc">WC souprava WHITE v čisté bílé. Nadčasový design, který se hodí do každé koupelny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135200172</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="51">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200211.jpg" alt="Držák WC papíru" class="prod-img" data-full="images/135200211.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Koupelna a doplňky</div>
+                <h3 class="product-name">Držák WC papíru</h3>
+                <p class="product-desc">Držák na toaletní papír z odolného plastu. Jednoduchá montáž a praktický tvar pro snadné použití.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135200211</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="52">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200350.jpg" alt="Košík na kolíčky Nature ratan" class="prod-img" data-full="images/135200350.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík na kolíčky Nature ratan</h3>
+                <p class="product-desc">Košík na kolíčky v designu Nature ratan 17,5x23,5 cm. Přehledně uskladní kolíčky na prádlo.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">17,5x23,5x13,4 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200350</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="53">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300003.jpg" alt="Košík (3) Nature ratan" class="prod-img" data-full="images/135300003.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (3) Nature ratan</h3>
+                <p class="product-desc">Sada 3 košíků Nature ratan 8x24 cm. Univerzální úložné řešení do koupelny, kuchyně i spíže.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">8x24x6,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300003</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="54">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300031.jpg" alt="Košík Nature ratan BÍLÝ na pečivo" class="prod-img" data-full="images/135300031.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík Nature ratan BÍLÝ na pečivo</h3>
+                <p class="product-desc">Bílý košík Nature ratan na pečivo 26x19 cm. Ozdobí stůl a udrží pečivo pěkně pohromadě.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26x19x8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300031</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="55">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135100530.jpg" alt="Košík pod linku BÍ, STŘ." class="prod-img" data-full="images/135100530.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík pod linku BÍ, STŘ.</h3>
+                <p class="product-desc">Košík pod linku ve variantách bílá/stříbrná. Šikovné úložné řešení pro čisticí prostředky a drobnosti do kuchyně i koupelny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">31x17,5x13 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135100530</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="56">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300001.jpg" alt="Košík (1) Nature ratan" class="prod-img" data-full="images/135300001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (1) Nature ratan</h3>
+                <p class="product-desc">Košík Nature ratan, velikost 1 (26,5×35,5 cm). Elegantní vzhled ratanu pro přehledné uložení do každé místnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26,5x35,5x6,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="57">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300002.jpg" alt="Košík (2) Nature ratan" class="prod-img" data-full="images/135300002.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (2) Nature ratan</h3>
+                <p class="product-desc">Košík Nature ratan, velikost 2 (17,5×25,5 cm). Univerzální úložný pomocník do koupelny, kuchyně i spíže.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">17,5x25,5x6,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300002</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="58">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300004.jpg" alt="Košík (4) Nature ratan" class="prod-img" data-full="images/135300004.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (4) Nature ratan</h3>
+                <p class="product-desc">Košík Nature ratan, velikost 4 (12×16,5 cm). Menší košík na drobnosti s ozdobnou strukturou ratanu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12x16,5x6,5cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300004</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="59">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300005.jpg" alt="Košík (5) Nature ratan" class="prod-img" data-full="images/135300005.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (5) Nature ratan</h3>
+                <p class="product-desc">Košík Nature ratan, velikost 5 (6,5×11,5 cm). Praktický malý košík na kosmetiku a maličkosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">6,5x11,5x8cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300005</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="60">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300006.jpg" alt="Košík (6) Nature ratan" class="prod-img" data-full="images/135300006.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík (6) Nature ratan</h3>
+                <p class="product-desc">Kulatý košík Nature ratan (d10 cm). Drobný dekorativní košík na doplňky a drobné předměty.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d10x10cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300006</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="61">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300030.jpg" alt="Košík Nature ratan HNĚDÝ" class="prod-img" data-full="images/135300030.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Košík Nature ratan HNĚDÝ</h3>
+                <p class="product-desc">Košík Nature ratan v hnědém provedení (26×19 cm). Vkusný doplněk na pečivo i pro uskladnění drobností.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">26x19x8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300030</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="62">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300500.jpg" alt="Box zásuvkový 3 zás. TURIA" class="prod-img" data-full="images/135300500.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Box zásuvkový 3 zás. TURIA</h3>
+                <p class="product-desc">Zásuvkový box TURIA se 3 zásuvkami (14×17 cm). Přehledné třídění kancelářských potřeb, kosmetiky nebo šperků.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">14x17x17 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300500</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="63">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300510.jpg" alt="Box zásuvkový 2 zás. BLACK" class="prod-img" data-full="images/135300510.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Box zásuvkový 2 zás. BLACK</h3>
+                <p class="product-desc">Zásuvkový box BLACK se 2 zásuvkami (27×35,5 cm). Prostorné a stohovatelné úložné řešení do pracovny i dětského pokoje.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27x35,5x18,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300510</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="64">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300511.jpg" alt="Box zásuvkový 3 zás. BLACK" class="prod-img" data-full="images/135300511.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Box zásuvkový 3 zás. BLACK</h3>
+                <p class="product-desc">Zásuvkový box BLACK se 3 zásuvkami (27×35,5 cm). Více prostoru pro přehledné uspořádání dokumentů a potřeb.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27x35,5x27 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300511</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="65">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300520.jpg" alt="Box zásuvkový 3 zás. RATAN" class="prod-img" data-full="images/135300520.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Box zásuvkový 3 zás. RATAN</h3>
+                <p class="product-desc">Zásuvkový box RATAN se 3 zásuvkami (18×23 cm). Spojuje praktické úložné zásuvky s dekorativním vzhledem ratanu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18x23x17 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300520</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="66">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300521.jpg" alt="Box zásuvkový 4 zás. RATAN" class="prod-img" data-full="images/135300521.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Košíky a úložné boxy</div>
+                <h3 class="product-name">Box zásuvkový 4 zás. RATAN</h3>
+                <p class="product-desc">Zásuvkový box RATAN se 4 zásuvkami (18×21,5 cm). Elegantní organizér pro pořádek v každé místnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18x21,5x23 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300521</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="67">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300090.jpg" alt="Koš odpad MINI TINY kolíbka" class="prod-img" data-full="images/135300090.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad MINI TINY kolíbka</h3>
+                <p class="product-desc">Mini odpadkový koš TINY o průměru 12,5 cm s kolíbkovým víkem. Ideální do koupelny nebo k pracovnímu stolu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d12,5x17,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300090</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="68">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300111.jpg" alt="Koš odpad 7,5 SMART BÍLÝ s vložkou, pedál" class="prod-img" data-full="images/135300111.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad 7,5 SMART BÍLÝ s vložkou, pedál</h3>
+                <p class="product-desc">Bílý pedálový koš SMART 7,5 l s vyjímatelnou vložkou. Hygienické otevírání nohou, čistý design.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135300111</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="69">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300112.jpg" alt="Koš odpad 7,5 SMART ČERNÝ s vložkou, pedál" class="prod-img" data-full="images/135300112.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad 7,5 SMART ČERNÝ s vložkou, pedál</h3>
+                <p class="product-desc">Černý pedálový koš SMART 7,5 l s vložkou. Praktický do koupelny i kuchyně, snadná údržba.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135300112</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="70">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300150.jpg" alt="Koš odpad pedálový BÍLÝ bez vložky" class="prod-img" data-full="images/135300150.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad pedálový BÍLÝ bez vložky</h3>
+                <p class="product-desc">Pedálový koš 50 l v bílém provedení. Objemný pomocník do kuchyně, otevírání bez dotyku rukou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300150</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="71">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300221.jpg" alt="Koš univerzální flexi ECO" class="prod-img" data-full="images/135300221.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš univerzální flexi ECO</h3>
+                <p class="product-desc">Univerzální flexi koš 42 l ECO. Lehký a všestranný na prádlo, hračky i tříděný odpad.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">42l · d45 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300221</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="72">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300590.jpg" alt="Box LÉKÁRNA s vložkou" class="prod-img" data-full="images/135300590.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Box LÉKÁRNA s vložkou</h3>
+                <p class="product-desc">Box LÉKÁRNA 12 l s vložkou. Přehledně uskladní léky a zdravotnický materiál mimo dosah dětí.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">12l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300590</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="73">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135301042.jpg" alt="Koš odpad POPELNICE ČERNÁ s víkem" class="prod-img" data-full="images/135301042.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad POPELNICE ČERNÁ s víkem</h3>
+                <p class="product-desc">Odpadkový koš POPELNICE 31 l s víkem v černé barvě. Robustní řešení na tříděný i směsný odpad.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">31l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135301042</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="74">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200308.jpg" alt="Koš na použité prádlo RATAN" class="prod-img" data-full="images/135200308.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na použité prádlo RATAN</h3>
+                <p class="product-desc">Koš na použité prádlo RATAN 48,5 l (27×46×60 cm). Prostorný, vzdušný a dekorativní pomocník do koupelny nebo šatny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">48,5l · 27x46x60cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200308</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="75">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200320.jpg" alt="Koš na čisté prádlo" class="prod-img" data-full="images/135200320.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na čisté prádlo</h3>
+                <p class="product-desc">Koš na čisté prádlo (60×40 cm). Praktický na přenášení a uskladnění vypraného prádla.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">60x40x26 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200320</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="76">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135200321.jpg" alt="Koš na čisté prádlo RATAN MIX" class="prod-img" data-full="images/135200321.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na čisté prádlo RATAN MIX</h3>
+                <p class="product-desc">Koš na čisté prádlo RATAN 35 l v mixu barev. Lehký a vzdušný, s elegantním vzhledem ratanu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35l · 35x53,5x26cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135200321</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="77">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300100.jpg" alt="Koš odpad pedálový BÍLÝ" class="prod-img" data-full="images/135300100.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad pedálový BÍLÝ</h3>
+                <p class="product-desc">Pedálový odpadkový koš 7 l v bílé barvě. Hygienické otevírání nohou, ideální do koupelny i k pracovnímu stolu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">7l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300100</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="78">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300101.jpg" alt="Koš odpad pedálový ČERNÝ" class="prod-img" data-full="images/135300101.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad pedálový ČERNÝ</h3>
+                <p class="product-desc">Pedálový odpadkový koš 7 l v černé barvě. Praktický a nenápadný pomocník do každé místnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">7l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300101</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="79">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300121.jpg" alt="Koš odpad COLOR BÍLÝ bez vložky, pedál" class="prod-img" data-full="images/135300121.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR BÍLÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 8 l v bílé barvě. Kompaktní tvar a otevírání pedálem bez dotyku rukou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">8l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300121</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="80">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300122.jpg" alt="Koš odpad COLOR STŘÍBRNÝ bez vložky, pedál" class="prod-img" data-full="images/135300122.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR STŘÍBRNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 8 l ve stříbrné barvě. Moderní vzhled a hygienické ovládání nohou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">8l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300122</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="81">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300141.jpg" alt="Koš odpad COLOR BÍLÝ bez vložky, pedál" class="prod-img" data-full="images/135300141.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR BÍLÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 18 l v bílé barvě. Univerzální objem do kuchyně, koupelny i pracovny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300141</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="82">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300142.jpg" alt="Koš odpad COLOR STŘÍBRNÝ bez vložky, pedál" class="prod-img" data-full="images/135300142.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR STŘÍBRNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 18 l ve stříbrné barvě. Praktický pomocník s čistým designem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300142</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="83">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300143.jpg" alt="Koš odpad COLOR ČERNO-STŘÍBRNÝ bez vložky, pedál" class="prod-img" data-full="images/135300143.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR ČERNO-STŘÍBRNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 18 l v černo-stříbrném provedení. Moderní dvoubarevný vzhled do interiéru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300143</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="84">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300144.jpg" alt="Koš odpad COLOR BÍLO-ČERNÝ bez vložky, pedál" class="prod-img" data-full="images/135300144.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR BÍLO-ČERNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 18 l v bílo-černém provedení. Elegantní kombinace barev a otevírání pedálem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300144</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="85">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300145.jpg" alt="Koš odpad COLOR HNĚDÝ bez vložky,pedál" class="prod-img" data-full="images/135300145.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR HNĚDÝ bez vložky,pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 18 l v hnědé barvě. Teplý zemitý tón, který zapadne do útulného interiéru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">18l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300145</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="86">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300160.jpg" alt="Koš odpad kancelářský" class="prod-img" data-full="images/135300160.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad kancelářský</h3>
+                <p class="product-desc">Kancelářský odpadkový koš (29×29 cm). Otevřený tvar pro snadné a rychlé vyhazování u pracovního stolu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">29x29x30 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300160</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="87">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300181.jpg" alt="Koš odpad COLOR BÍLÝ bez vložky, pedál" class="prod-img" data-full="images/135300181.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR BÍLÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 27 l v bílé barvě. Prostornější objem pro kuchyň i domácnost.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300181</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="88">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300182.jpg" alt="Koš odpad COLOR ČERNÝ bez vložky, pedál" class="prod-img" data-full="images/135300182.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR ČERNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 27 l v černé barvě. Robustní pomocník s hygienickým ovládáním nohou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300182</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="89">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300183.jpg" alt="Koš odpad COLOR ČERNO-STŘÍBRNÝ bez vložky, pedál" class="prod-img" data-full="images/135300183.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR ČERNO-STŘÍBRNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 27 l v černo-stříbrném provedení. Moderní dvoubarevný design do každé domácnosti.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300183</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="90">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300184.jpg" alt="Koš odpad COLOR BÍLO-ČERNÝ bez vložky, pedál" class="prod-img" data-full="images/135300184.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR BÍLO-ČERNÝ bez vložky, pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 27 l v bílo-černém provedení. Stylová kombinace barev pro větší objem odpadu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300184</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="91">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300185.jpg" alt="Koš odpad COLOR HNĚDÝ bez vložky,pedál" class="prod-img" data-full="images/135300185.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad COLOR HNĚDÝ bez vložky,pedál</h3>
+                <p class="product-desc">Pedálový koš COLOR 27 l v hnědé barvě. Zemitý tón a praktické otevírání pedálem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">27l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300185</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="92">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300191.jpg" alt="Koš odpad výklopný BÍLÝ" class="prod-img" data-full="images/135300191.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad výklopný BÍLÝ</h3>
+                <p class="product-desc">Výklopný odpadkový koš 30 l v bílé barvě. Odklápěcí víko umožňuje pohodlné vyhazování jednou rukou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300191</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="93">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300192.jpg" alt="Koš odpad výklopný MIX" class="prod-img" data-full="images/135300192.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad výklopný MIX</h3>
+                <p class="product-desc">Výklopný odpadkový koš 30 l v mixu barev. Praktický objem do kuchyně s odklápěcím víkem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">30l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300192</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="94">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300196.jpg" alt="Koš odpad výklopný BÍLÝ" class="prod-img" data-full="images/135300196.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad výklopný BÍLÝ</h3>
+                <p class="product-desc">Výklopný odpadkový koš 50 l v bílé barvě. Velký objem pro domácnost, provoz i dílnu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300196</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="95">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300197.jpg" alt="Koš odpad výklopný MIX" class="prod-img" data-full="images/135300197.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad výklopný MIX</h3>
+                <p class="product-desc">Výklopný odpadkový koš 50 l v mixu barev. Prostorný pomocník s praktickým výklopným víkem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">50l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300197</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="96">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300211.jpg" alt="Koš odpad dělený BÍLÝ bez vložky, pedál" class="prod-img" data-full="images/135300211.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad dělený BÍLÝ bez vložky, pedál</h3>
+                <p class="product-desc">Dělený pedálový koš 35 l v bílé barvě. Vnitřní přepážka umožňuje pohodlné třídění odpadu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300211</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="97">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300212.jpg" alt="Koš odpad dělený TMAVĚ ŠEDÝ bez vložky, pedál" class="prod-img" data-full="images/135300212.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad dělený TMAVĚ ŠEDÝ bez vložky, pedál</h3>
+                <p class="product-desc">Dělený pedálový koš 35 l v tmavě šedé barvě. Dvě sekce na tříděný odpad v jednom elegantním koši.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">35l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300212</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="98">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300225.jpg" alt="Koš na tříděný odpad MODRÝ" class="prod-img" data-full="images/135300225.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na tříděný odpad MODRÝ</h3>
+                <p class="product-desc">Koš na tříděný odpad 25 l v modré barvě. Barevné rozlišení usnadní třídění papíru a dalších surovin.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">25l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300225</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="99">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300226.jpg" alt="Koš na tříděný odpad ZELENÝ" class="prod-img" data-full="images/135300226.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na tříděný odpad ZELENÝ</h3>
+                <p class="product-desc">Koš na tříděný odpad 25 l v zelené barvě. Praktický objem pro pohodlné třídění doma i v provozu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">25l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300226</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="100">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300227.jpg" alt="Koš na tříděný odpad ŽLUTÝ" class="prod-img" data-full="images/135300227.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš na tříděný odpad ŽLUTÝ</h3>
+                <p class="product-desc">Koš na tříděný odpad 25 l ve žluté barvě. Snadné rozlišení plastů a nápojových kartonů díky výrazné barvě.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">25l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300227</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="101">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300230.jpg" alt="Vědro s kolečky+ždímací koš ASSORT" class="prod-img" data-full="images/135300230.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Vědro s kolečky+ždímací koš ASSORT</h3>
+                <p class="product-desc">Úklidové vědro 15 l s kolečky a ždímacím košem. Usnadní vytírání i přesun vody, ždímací koš šetří ruce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">15l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300230</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="102">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135300232.jpg" alt="Vědro dělené+ždímací koš SURT" class="prod-img" data-full="images/135300232.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Vědro dělené+ždímací koš SURT</h3>
+                <p class="product-desc">Úklidové vědro 16 l SURT s dělením a ždímacím košem. Oddělí čistou a špinavou vodu pro účinnější úklid.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">16l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135300232</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="103">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135301041.jpg" alt="Koš odpad POPELNICE STŘÍBRNÁ s víkem" class="prod-img" data-full="images/135301041.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad POPELNICE STŘÍBRNÁ s víkem</h3>
+                <p class="product-desc">Odpadkový koš POPELNICE 31 l se stříbrným víkem. Robustní řešení na směsný i tříděný odpad.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">31l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135301041</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="104">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135301061.jpg" alt="Koš odpad POPELNICE CITY STŘÍBRNÁ s víkem" class="prod-img" data-full="images/135301061.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad POPELNICE CITY STŘÍBRNÁ s víkem</h3>
+                <p class="product-desc">Odpadkový koš POPELNICE CITY 51 l ve stříbrné barvě. Velký objem s víkem pro domácnost i provoz.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">51l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135301061</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="105">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135301062.jpg" alt="Koš odpad POPELNICE CITY ČERNÁ s víkem" class="prod-img" data-full="images/135301062.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Úklid a odpad</div>
+                <h3 class="product-name">Koš odpad POPELNICE CITY ČERNÁ s víkem</h3>
+                <p class="product-desc">Odpadkový koš POPELNICE CITY 51 l v černé barvě. Prostorný koš s víkem a nadčasovým vzhledem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">51l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135301062</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="106">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500100.jpg" alt="Rozprašovač DEKOR čirý" class="prod-img" data-full="images/135500100.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač DEKOR čirý</h3>
+                <p class="product-desc">Rozprašovač 0,38 l DEKOR v čirém provedení. Jemný rozstřik na pokojové rostliny i žehlení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,38l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500100</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="107">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500101.jpg" alt="Rozprašovač DEKOR čirý" class="prod-img" data-full="images/135500101.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač DEKOR čirý</h3>
+                <p class="product-desc">Rozprašovač 0,50 l DEKOR čirý. Větší objem pro zálivku rostlin i úklidové roztoky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,50l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500101</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="108">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500120.jpg" alt="Rozprašovač lahvička" class="prod-img" data-full="images/135500120.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač lahvička</h3>
+                <p class="product-desc">Malá lahvička s rozprašovačem 0,125 l. Ideální na kosmetiku, kadeřnictví i drobné domácí použití.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,125l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500120</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="109">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500121.jpg" alt="Rozprašovač lahvička" class="prod-img" data-full="images/135500121.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač lahvička</h3>
+                <p class="product-desc">Rozprašovací lahvička 0,210 l. Praktická velikost na roztoky, vodu i péči o rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">0,210l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500121</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="110">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500122.jpg" alt="Sada cestovních rozprašovačů" class="prod-img" data-full="images/135500122.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Sada cestovních rozprašovačů</h3>
+                <p class="product-desc">Sada 2 cestovních rozprašovačů 10 ml. Skvělé na parfém či dezinfekci do kabelky a zavazadla.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2x10ml</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500122</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="111">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500151.jpg" alt="Rozprašovač mix" class="prod-img" data-full="images/135500151.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač mix</h3>
+                <p class="product-desc">Rozprašovač 1,15 l v mixu barev. Velký objem na úklid, zahradu i péči o rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">1,15l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500151</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="112">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500161.jpg" alt="Rozprašovač tlakový ARECA ruční" class="prod-img" data-full="images/135500161.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač tlakový ARECA ruční</h3>
+                <p class="product-desc">Tlakový ruční rozprašovač ARECA 1,0 l. Souvislý rozstřik pod tlakem, ideální na postřik rostlin.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">1,0l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500161</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="113">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135500162.jpg" alt="Rozprašovač tlakový ARECA ruční" class="prod-img" data-full="images/135500162.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Rozprašovače</div>
+                <h3 class="product-name">Rozprašovač tlakový ARECA ruční</h3>
+                <p class="product-desc">Tlakový ruční rozprašovač ARECA 2,0 l. Větší objem pro zahradu, skleník i úklid větších ploch.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2,0l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135500162</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="114">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900001.jpg" alt="Váza DALIA" class="prod-img" data-full="images/135900001.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Váza DALIA</h3>
+                <p class="product-desc">Váza DALIA o průměru 15 cm, výška 21 cm. Moderní tvar oživí interiér řezanými i umělými květinami.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d15x21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900001</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="115">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900050.jpg" alt="Konev CLASSIC,mix barev" class="prod-img" data-full="images/135900050.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Konev CLASSIC,mix barev</h3>
+                <p class="product-desc">Zahradní konev 2 l CLASSIC v mixu barev. Šikovná na zálivku pokojových i balkonových rostlin.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">2l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900050</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="116">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900051.jpg" alt="Konev CLASSIC,mix barev" class="prod-img" data-full="images/135900051.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Konev CLASSIC,mix barev</h3>
+                <p class="product-desc">Zahradní konev 4 l CLASSIC v mixu barev. Větší objem pro zálivku zahrady a záhonů.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">4l</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900051</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="117">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900203.jpg" alt="Truhlík 25 TER" class="prod-img" data-full="images/135900203.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Truhlík 25 TER</h3>
+                <p class="product-desc">Truhlík 25 cm v barvě terakota. Klasický tvar na osázení balkonu i parapetu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135900203</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="118">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900204.jpg" alt="Truhlík 25 BÍLÝ" class="prod-img" data-full="images/135900204.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Truhlík 25 BÍLÝ</h3>
+                <p class="product-desc">Bílý truhlík 25 cm. Čistý vzhled ke květinám i bylinkám na balkoně a okně.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135900204</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="119">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900206.jpg" alt="Truhlik závěsný 37 ZEUS TER" class="prod-img" data-full="images/135900206.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Truhlik závěsný 37 ZEUS TER</h3>
+                <p class="product-desc">Závěsný truhlík ZEUS 37 cm v barvě terakota. Vhodný na zábradlí balkonu, s odtokem vody.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135900206</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="120">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900207.jpg" alt="Truhlik závěsný 37 ZEUS ANTRACIT" class="prod-img" data-full="images/135900207.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Truhlik závěsný 37 ZEUS ANTRACIT</h3>
+                <p class="product-desc">Závěsný truhlík ZEUS 37 cm v antracitové barvě. Moderní doplněk na balkon a terasu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="code">Kód 135900207</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="121">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900304.jpg" alt="Květináč závěsný TER" class="prod-img" data-full="images/135900304.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Květináč závěsný TER</h3>
+                <p class="product-desc">Závěsný květináč o průměru 30 cm v terakotě. Ideální na převislé rostliny a bylinky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d30 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900304</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="122">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900311.jpg" alt="Obal na květináč DECORATIVE" class="prod-img" data-full="images/135900311.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DECORATIVE</h3>
+                <p class="product-desc">Obal na květináč DECORATIVE o průměru 10 cm. Elegantně skryje běžný květináč, moderní design.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d10x10,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900311</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="123">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900312.jpg" alt="Obal na květináč DECORATIVE" class="prod-img" data-full="images/135900312.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DECORATIVE</h3>
+                <p class="product-desc">Obal na květináč DECORATIVE o průměru 12 cm. Ozdobný doplněk k pokojovým rostlinám.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d12x12,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900312</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="124">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900313.jpg" alt="Obal na květináč DECORATIVE" class="prod-img" data-full="images/135900313.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DECORATIVE</h3>
+                <p class="product-desc">Obal na květináč DECORATIVE o průměru 14 cm. Sladí rostliny s interiérem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d14x15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900313</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="125">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900314.jpg" alt="Obal na květináč DECORATIVE" class="prod-img" data-full="images/135900314.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DECORATIVE</h3>
+                <p class="product-desc">Obal na květináč DECORATIVE o průměru 16 cm pro větší pokojové rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d16x16,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900314</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="126">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900315.jpg" alt="Obal na květináč DECORATIVE" class="prod-img" data-full="images/135900315.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DECORATIVE</h3>
+                <p class="product-desc">Obal na květináč DECORATIVE o průměru 20 cm. Reprezentativní obal pro velké rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d20x21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900315</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="127">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900316.jpg" alt="Obal na květináč pastel DECORATIVE" class="prod-img" data-full="images/135900316.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč pastel DECORATIVE</h3>
+                <p class="product-desc">Pastelový obal na květináč DECORATIVE 10 cm. Jemné barvy pro útulný interiér.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d10x10,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900316</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="128">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900317.jpg" alt="Obal na květináč pastel DECORATIVE" class="prod-img" data-full="images/135900317.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč pastel DECORATIVE</h3>
+                <p class="product-desc">Pastelový obal na květináč DECORATIVE 12 cm. Moderní pastelové provedení.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d12x12,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900317</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="129">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900318.jpg" alt="Obal na květináč pastel DECORATIVE" class="prod-img" data-full="images/135900318.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč pastel DECORATIVE</h3>
+                <p class="product-desc">Pastelový obal na květináč DECORATIVE 14 cm ke květinám i bylinkám.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d14x15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900318</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="130">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900319.jpg" alt="Obal na květináč pastel DECORATIVE" class="prod-img" data-full="images/135900319.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč pastel DECORATIVE</h3>
+                <p class="product-desc">Pastelový obal na květináč DECORATIVE 16 cm pro větší rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d16x16,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900319</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="131">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900320.jpg" alt="Obal na květináč pastel DECORATIVE" class="prod-img" data-full="images/135900320.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč pastel DECORATIVE</h3>
+                <p class="product-desc">Pastelový obal na květináč DECORATIVE 20 cm. Výrazný doplněk do obývacího prostoru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d 20x21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900320</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="132">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900321.jpg" alt="Obal na květináč COCO" class="prod-img" data-full="images/135900321.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč COCO</h3>
+                <p class="product-desc">Obal na květináč COCO 11 cm. Přírodní vzhled, který ladí s moderním i venkovským stylem.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d11x8,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900321</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="133">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900322.jpg" alt="Obal na květináč COCO" class="prod-img" data-full="images/135900322.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč COCO</h3>
+                <p class="product-desc">Obal na květináč COCO 14 cm s přírodním designem pro pokojové rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d14x10,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900322</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="134">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900323.jpg" alt="Obal na květináč COCO" class="prod-img" data-full="images/135900323.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč COCO</h3>
+                <p class="product-desc">Obal na květináč COCO 17 cm. Větší velikost s příjemnou strukturou povrchu.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d17x13 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900323</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="135">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900330.jpg" alt="Obal na květináč DESERT" class="prod-img" data-full="images/135900330.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DESERT</h3>
+                <p class="product-desc">Obal na květináč DESERT 13 cm. Moderní matný povrch v zemitých tónech.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d13x13 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900330</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="136">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900331.jpg" alt="Obal na květináč DESERT" class="prod-img" data-full="images/135900331.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DESERT</h3>
+                <p class="product-desc">Obal na květináč DESERT 16 cm pro středně velké rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d16x16 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900331</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="137">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900332.jpg" alt="Obal na květináč DESERT" class="prod-img" data-full="images/135900332.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DESERT</h3>
+                <p class="product-desc">Obal na květináč DESERT 18 cm. Elegantní doplněk do obývacího pokoje.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d18x18 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900332</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="138">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900333.jpg" alt="Obal na květináč DESERT" class="prod-img" data-full="images/135900333.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč DESERT</h3>
+                <p class="product-desc">Obal na květináč DESERT 21 cm. Prostorný obal pro velké pokojové rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d21x21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900333</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="139">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900351.jpg" alt="Obal na květináč QUARTZ" class="prod-img" data-full="images/135900351.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč QUARTZ</h3>
+                <p class="product-desc">Obal na květináč QUARTZ 9,5 cm. Jemná struktura a moderní vzhled na parapet i stůl.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d9,5x9,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900351</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="140">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900352.jpg" alt="Obal na květináč QUARTZ" class="prod-img" data-full="images/135900352.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč QUARTZ</h3>
+                <p class="product-desc">Obal na květináč QUARTZ 13 cm pro pokojové květiny a bylinky.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d13x10,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900352</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="141">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900353.jpg" alt="Obal na květináč QUARTZ" class="prod-img" data-full="images/135900353.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč QUARTZ</h3>
+                <p class="product-desc">Obal na květináč QUARTZ 15 cm. Stylový doplněk k zeleni v interiéru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d15x11,8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900353</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="142">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900354.jpg" alt="Obal na květináč QUARTZ" class="prod-img" data-full="images/135900354.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč QUARTZ</h3>
+                <p class="product-desc">Obal na květináč QUARTZ 17 cm pro větší rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d17x13,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900354</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="143">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900355.jpg" alt="Obal na květináč QUARTZ" class="prod-img" data-full="images/135900355.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč QUARTZ</h3>
+                <p class="product-desc">Obal na květináč QUARTZ 19 cm. Reprezentativní velikost do obývacího prostoru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d19x15 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900355</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="144">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900361.jpg" alt="Obal na květináč PALMA" class="prod-img" data-full="images/135900361.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč PALMA</h3>
+                <p class="product-desc">Obal na květináč PALMA 9,5 cm. Moderní design, který vynikne s každou rostlinou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d9,5x9,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900361</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="145">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900362.jpg" alt="Obal na květináč PALMA" class="prod-img" data-full="images/135900362.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč PALMA</h3>
+                <p class="product-desc">Obal na květináč PALMA 11 cm pro menší pokojové květiny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d11x11,3 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900362</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="146">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900363.jpg" alt="Obal na květináč PALMA" class="prod-img" data-full="images/135900363.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč PALMA</h3>
+                <p class="product-desc">Obal na květináč PALMA 13 cm. Elegantní doplněk k zeleni.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d13x13 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900363</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="147">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900364.jpg" alt="Obal na květináč PALMA" class="prod-img" data-full="images/135900364.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč PALMA</h3>
+                <p class="product-desc">Obal na květináč PALMA 16 cm pro větší rostliny do interiéru.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d16x16 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900364</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="148">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900371.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900371.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 11 cm s integrovanou podmiskou. Zachytí přebytečnou vodu při zálivce.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d11x9,8 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900371</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="149">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900372.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900372.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 13 cm s podmiskou. Praktické a čisté řešení pro pokojové rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d13x11,3 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900372</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="150">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900373.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900373.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 15 cm s podmiskou pro středně velké rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d15x14 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900373</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="151">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900374.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900374.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 17 cm s podmiskou. Ochrání parapet i nábytek před vodou.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d17x15,5 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900374</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="152">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900375.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900375.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 19 cm s podmiskou pro větší rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d19x17 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900375</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="product" data-num="153">
+              <div class="product-images">
+                <div class="img-main"><img src="images/135900376.jpg" alt="Obal na květináč s podmiskou WIND" class="prod-img" data-full="images/135900376.jpg" loading="lazy"></div>
+              </div>
+              <div class="product-info">
+                <div class="cat-label">Zahrada a květiny</div>
+                <h3 class="product-name">Obal na květináč s podmiskou WIND</h3>
+                <p class="product-desc">Obal na květináč WIND 23 cm s podmiskou. Prostorné řešení pro velké pokojové rostliny.</p>
+                <div class="product-meta">
+                  <div class="meta-row">
+                    <span class="dims-label">Rozměr</span>
+                    <span class="dims-value">d23x21 cm</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="code">Kód 135900376</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+  </div>
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Náhled obrázku">
+  <button class="lightbox-close" aria-label="Zavřít náhled">×</button>
+  <img src="" alt="">
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Zpět nahoru">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <a href="/">
+          <img src="../../assets/logo_genex_white.png" alt="GENEX VS" class="footer-logo-img">
+        </a>
+        <h4>GENEX VS, s.r.o.</h4>
+        <p class="text-gray">Velkoobchod s tradicí od roku 2005.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p class="text-gray">genex@genexvs.cz<br>+420 730 893 126</p>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 GENEX VS, s.r.o. Všechna práva vyhrazena.
+      <br>
+      <span class="text-sm text-gray">
+        Nepoužíváme analytické ani marketingové cookies. Pouze technické nutné pro provoz webu.
+        <a href="/zasady-ochrany-soukromi/" class="text-white underline">Více v zásadách.</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobilní menu (sjednoceno se stávajícím webem)
+const mobileBtn = document.querySelector('.mobile-menu-btn');
+const primaryNav = document.querySelector('header nav');
+if (mobileBtn && primaryNav) {
+  mobileBtn.addEventListener('click', () => {
+    const isOpen = mobileBtn.classList.toggle('active');
+    primaryNav.classList.toggle('active', isOpen);
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+}
+
+// Scroll animations — produkty se objeví při scrollu (staggered fade-in)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      entry.target.style.transitionDelay = (i * 0.04) + 's';
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.product').forEach(p => observer.observe(p));
+
+// Tooltip funguje přes pure CSS (:hover / :focus-within). Žádný JS.
+
+// ABOUT — toggle + scroll
+const aboutBtn = document.getElementById('aboutBtn');
+const aboutSection = document.getElementById('aboutSection');
+const backBtn = document.getElementById('backBtn');
+const catalogTop = document.getElementById('catalogTop');
+if (aboutBtn && aboutSection) {
+  aboutBtn.addEventListener('click', () => {
+    const isOpen = aboutSection.classList.contains('open');
+    if (isOpen) {
+      aboutSection.classList.remove('open');
+      aboutSection.setAttribute('aria-hidden', 'true');
+      aboutBtn.setAttribute('aria-expanded', 'false');
+      aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    } else {
+      aboutSection.classList.add('open');
+      aboutSection.setAttribute('aria-hidden', 'false');
+      aboutBtn.setAttribute('aria-expanded', 'true');
+      aboutBtn.querySelector('span').textContent = 'Skrýt informace';
+      // smooth scroll k about sekci
+      setTimeout(() => {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  });
+}
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    aboutSection.classList.remove('open');
+    aboutSection.setAttribute('aria-hidden', 'true');
+    aboutBtn.setAttribute('aria-expanded', 'false');
+    aboutBtn.querySelector('span').textContent = 'Více o firmě';
+    // Počkat až se sekce zavře (CSS animace 700ms), pak scroll
+    setTimeout(() => {
+      catalogTop.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 720);
+  });
+}
+
+// Back to top — zobrazí se po 400px scrollu
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// LIGHTBOX
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.prod-img, .life-img, .slide-img').forEach(img => {
+  img.addEventListener('click', (e) => {
+    e.preventDefault();
+    lightboxImg.src = img.dataset.full || img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+});
+
+// TOOLTIP — tap-toggle + clamp bubliny do viewportu (CSS centrované,
+// ale když je trigger u okraje, bublina vytéká → JS dopočítá --tip-shift)
+const brandTips = document.querySelectorAll('.brand-tip');
+
+function clampTipBubble(tip) {
+  const bubble = tip.querySelector('.tip-bubble');
+  if (!bubble) return;
+  bubble.style.setProperty('--tip-shift', '0px');
+  // počkáme na layout, pak změříme
+  requestAnimationFrame(() => {
+    const rect = bubble.getBoundingClientRect();
+    const margin = 8;
+    let shift = 0;
+    if (rect.right > window.innerWidth - margin) {
+      shift = -(rect.right - (window.innerWidth - margin));
+    } else if (rect.left < margin) {
+      shift = margin - rect.left;
+    }
+    bubble.style.setProperty('--tip-shift', shift + 'px');
+  });
+}
+
+const closeAllTips = () => brandTips.forEach(t => {
+  t.classList.remove('open');
+  const b = t.querySelector('.tip-bubble');
+  if (b) b.style.removeProperty('--tip-shift');
+  if (document.activeElement === t) t.blur();
+});
+
+brandTips.forEach(tip => {
+  tip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const wasOpen = tip.classList.contains('open');
+    closeAllTips();
+    if (!wasOpen) {
+      tip.classList.add('open');
+      clampTipBubble(tip);
+    }
+  });
+  // Hover na desktopu — clamp taky, kdyby trigger byl u okraje
+  tip.addEventListener('mouseenter', () => clampTipBubble(tip));
+  tip.addEventListener('focus', () => clampTipBubble(tip));
+});
+
+// Tap mimo libovolnou bublinu ji zavře
+document.addEventListener('click', closeAllTips);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAllTips();
+});
+
+// Po resize/scroll přepočítej otevřenou bublinu
+let tipReclampScheduled = false;
+function reclampOpenTip() {
+  if (tipReclampScheduled) return;
+  tipReclampScheduled = true;
+  requestAnimationFrame(() => {
+    tipReclampScheduled = false;
+    const openTip = document.querySelector('.brand-tip.open');
+    if (openTip) clampTipBubble(openTip);
+  });
+}
+window.addEventListener('resize', reclampOpenTip);
+window.addEventListener('scroll', reclampOpenTip, { passive: true });
+</script>
+
+</body>
+</html>
