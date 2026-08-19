@@ -1842,3 +1842,20 @@ body.home main {
     color: var(--faint);
     margin: 0 0.8rem;
 }
+
+.b2b-shot {
+    margin: 1.2rem 0 0;
+}
+
+.b2b-shot img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+}
+
+.b2b-shot figcaption {
+    margin-top: 0.6rem;
+    color: var(--faint);
+    font-size: 0.9rem;
+}
