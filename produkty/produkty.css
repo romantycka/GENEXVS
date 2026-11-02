@@ -1,0 +1,351 @@
+/* Produktové listy – přehled s hledáním a detail produktu */
+
+/* světlý vzhled obsahu (hlavička a patička zůstávají z webu) */
+main.pr-light {
+    --white: #14141f;
+    --soft: #4a4d5c;
+    --faint: #7a7d8c;
+    --line: rgba(0, 0, 0, 0.1);
+    --panel: #f6f7f9;
+    --bg-2: #f6f7f9;
+    background: #fff;
+    color: var(--white);
+}
+
+main.pr-light .pr-card:hover {
+    box-shadow: 0 18px 40px -24px rgba(0, 0, 0, 0.35);
+}
+
+main.pr-light .pr-card-img,
+main.pr-light .pr-main-img {
+    border-bottom: 1px solid var(--line);
+}
+
+main.pr-light .pr-main-img,
+main.pr-light .pr-thumbs button {
+    border: 1px solid var(--line);
+}
+
+main.pr-light .pr-search input {
+    background: #fff;
+}
+
+.pr-wrap {
+    padding-top: calc(var(--header-h) + clamp(2rem, 5vw, 3.5rem));
+}
+
+/* ---- přehled ---- */
+.pr-search {
+    position: relative;
+    max-width: 40rem;
+    margin-top: 2rem;
+}
+
+.pr-search input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font: inherit;
+    font-size: 1.05rem;
+    color: var(--white);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s var(--ease);
+}
+
+.pr-search input:focus {
+    border-color: var(--accent);
+}
+
+.pr-count {
+    margin-top: 0.8rem;
+    color: var(--faint);
+    font-size: 0.9rem;
+}
+
+.pr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.4rem;
+}
+
+.pr-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.pr-card:hover {
+    border-color: rgba(0, 194, 232, 0.5);
+    transform: translateY(-4px);
+}
+
+.pr-card[hidden] {
+    display: none;
+}
+
+.pr-card-img {
+    background: #fff;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pr-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pr-card-body {
+    padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.pr-card-brand {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.pr-card h2 {
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0.35rem 0 0.6rem;
+}
+
+.pr-card-codes {
+    font-size: 0.82rem;
+    color: var(--faint);
+}
+
+.pr-nic {
+    color: var(--soft);
+    padding: 2rem 0;
+}
+
+/* ---- detail ---- */
+.pr-crumbs {
+    font-size: 0.85rem;
+    color: var(--faint);
+    margin-bottom: 1.6rem;
+}
+
+.pr-crumbs a {
+    color: var(--soft);
+}
+
+.pr-detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.pr-main-img {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    border-radius: 8px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.pr-main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pr-thumbs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+.pr-thumbs button {
+    padding: 0;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pr-thumbs button[aria-current="true"] {
+    border-color: var(--accent);
+}
+
+.pr-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pr-info h1 {
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+    line-height: 1.15;
+    margin: 0.5rem 0 1.4rem;
+}
+
+.pr-codes {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1.2rem;
+    padding: 1.1rem 1.2rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 1.6rem;
+}
+
+.pr-codes dt {
+    color: var(--faint);
+    font-size: 0.9rem;
+}
+
+.pr-codes dd {
+    margin: 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.pr-lede {
+    color: var(--soft);
+    font-size: 1.08rem;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+.pr-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.8rem;
+}
+
+.pr-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.55rem;
+    color: var(--soft);
+}
+
+.pr-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.pr-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.pr-btn {
+    display: inline-block;
+    padding: 0.85rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    color: var(--white);
+}
+
+.pr-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #001018;
+}
+
+.pr-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+    margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.pr-sections h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.pr-sections p {
+    color: var(--soft);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.pr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.pr-table th,
+.pr-table td {
+    text-align: left;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+    vertical-align: top;
+}
+
+.pr-table th {
+    color: var(--faint);
+    font-weight: 400;
+    width: 45%;
+    padding-right: 1rem;
+}
+
+.pr-note {
+    font-size: 0.85rem;
+    color: var(--faint);
+}
+
+/* zvětšený obrázek */
+.pr-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 10, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: zoom-out;
+}
+
+.pr-lightbox[hidden] {
+    display: none;
+}
+
+.pr-lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    background: #fff;
+    border-radius: 6px;
+}
+
+@media (max-width: 860px) {
+    .pr-detail,
+    .pr-sections {
+        grid-template-columns: 1fr;
+    }
+}
