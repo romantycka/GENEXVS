@@ -184,13 +184,22 @@ body.akce {
     text-align: center;
     font-family: var(--display);
     font-weight: 800;
-    font-size: 1.05rem;
-    line-height: 1.05;
+    font-size: 1.9rem;
+    line-height: .95;
     text-transform: uppercase;
     color: var(--navy-2);
     background: radial-gradient(circle at 35% 30%, #fff0b0, var(--gold) 60%, #b07a14);
     box-shadow: 0 10px 24px -6px rgba(0, 0, 0, .5);
-    transform: rotate(-12deg);
+    outline: 2px dashed rgba(255, 255, 255, .9);
+    outline-offset: -5px;
+    align-content: center;
+}
+
+.ak-tip small {
+    display: block;
+    font-size: .95rem;
+    letter-spacing: .12em;
+    margin-bottom: .1rem;
 }
 
 .ak-vlna {
