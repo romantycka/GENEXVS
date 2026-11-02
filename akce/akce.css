@@ -323,7 +323,7 @@ body.akce {
     font-family: var(--script);
     font-weight: 400;
     font-size: clamp(1.9rem, 4vw, 2.6rem);
-    line-height: 1.3;
+    line-height: 1.6;
     color: var(--navy);
 }
 
@@ -627,7 +627,7 @@ body.akce {
     font-weight: 400;
     font-size: 1.5rem;
     color: #0b5f8f;
-    line-height: 1.3;
+    line-height: 1.6;
 }
 
 .ak-dafi span:not(.ak-nov) {
@@ -704,7 +704,7 @@ body.akce {
     font-family: var(--script);
     font-weight: 400;
     font-size: 2.2rem;
-    line-height: 1.3;
+    line-height: 1.6;
     margin-bottom: .5rem;
 }
 
