@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2B Genexis | GENEX VS</title>
-    <meta name="description" content="Vstup do objednávkového systému Genexis pro partnery GENEX VS a návod, co dělat, když se systém nenačítá.">
+    <meta name="description" content="Vstup do objednávkového systému Genexis pro partnery GENEX VS. Návody: jak objednat zboží vložením z Excelu a co dělat, když se systém nenačítá.">
     <link rel="canonical" href="https://genexvs.cz/b2b-portal/">
     <link rel="icon" href="/assets/favicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=10">
+    <link rel="stylesheet" href="/style.css?v=11">
 </head>
 
 <body>
@@ -70,11 +70,208 @@
             </div>
         </section>
 
-        <!-- Návod -->
-        <section class="section b2b-help">
+        <!-- Rozcestník návodů -->
+        <section class="b2b-guides">
+            <div class="container">
+                <span class="eyebrow is-centered">Návody krok za krokem</span>
+                <h2>S čím potřebujete pomoct?</h2>
+                <div class="b2b-guides-grid">
+                    <a href="#objednavka-z-excelu" class="b2b-guide-card">
+                        <h3>Chci objednat zboží ze svého Excelu</h3>
+                        <p>Máte seznam zboží v Excelu (EAN a počet kusů)? Vložíte ho do košíku najednou,
+                            nemusíte nic vyhledávat.</p>
+                        <span class="b2b-guide-go">Ukázat návod ↓</span>
+                    </a>
+                    <a href="#nenacita-se" class="b2b-guide-card">
+                        <h3>Genexis se nenačítá</h3>
+                        <p>Stránka se nenačte a jen se točí kolečko? Projděte pár jednoduchých kroků.</p>
+                        <span class="b2b-guide-go">Ukázat návod ↓</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Návod: objednávka z Excelu -->
+        <section class="section b2b-help" id="objednavka-z-excelu">
             <div class="container">
                 <div class="head">
-                    <span class="eyebrow is-centered">Pomoc s přihlášením</span>
+                    <span class="eyebrow is-centered">Návod 1 · Objednávka z Excelu</span>
+                    <h2>Jak vložit zboží do košíku ze svého Excelu</h2>
+                    <p class="b2b-help-sub">
+                        Místo hledání zboží jedno po druhém zkopírujete celý seznam z Excelu a vložíte ho
+                        do košíku. Zvládne to každý — jen kopírujete a vkládáte.
+                    </p>
+                </div>
+
+                <figure class="b2b-video" data-aos="fade-up">
+                    <video controls muted playsinline preload="none" poster="/assets/kosik-video-poster.jpg">
+                        <source src="/assets/kosik-z-excelu.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Celý postup na videu (33 vteřin). Vlevo je Excel, vpravo Genexis.</figcaption>
+                </figure>
+
+                <div class="b2b-note" data-aos="fade-up">
+                    <h3>Co musí být v Excelu</h3>
+                    <p>Jen <strong>dva sloupce</strong>, nic jiného:</p>
+                    <table class="b2b-xls">
+                        <thead>
+                            <tr><th></th><th>A</th><th>B</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>1</th><td>8593419414480</td><td>3</td></tr>
+                            <tr><th>2</th><td>8593419414848</td><td>4</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Sloupec A</strong> = EAN zboží (čárový kód, 13 číslic).
+                        <strong>Sloupec B</strong> = kolik kusů chcete.</p>
+                    <p>Každé zboží je na <strong>svém řádku</strong>. Soubor může být .xls i .xlsx.</p>
+                </div>
+
+                <!-- KROK 1 -->
+                <div class="b2b-step" data-aos="fade-up">
+                    <div class="b2b-step-head">
+                        <div class="b2b-step-num">1</div>
+                        <h3>V Genexisu otevřete okno „Vložit obsah košíku“</h3>
+                    </div>
+                    <div class="b2b-step-body">
+                        <ol>
+                            <li>Přihlaste se do Genexisu.</li>
+                            <li>Vpravo nahoře klikněte na <strong>ikonku košíku se šipkou</strong>.
+                                Objeví se nabídka.</li>
+                            <li>V nabídce klikněte na <strong>„Vložit obsah košíku“</strong>.</li>
+                            <li>Otevře se okno s bílým políčkem. <strong>Nechte ho otevřené</strong>
+                                a přepněte se do Excelu.</li>
+                        </ol>
+                        <figure class="b2b-shot">
+                            <img src="/assets/kosik-1-menu.jpg"
+                                alt="Nabídka pod ikonou košíku vpravo nahoře s volbou Vložit obsah košíku"
+                                loading="lazy">
+                            <figcaption>Ikonka košíku (červený kroužek nahoře) a pod ní „Vložit obsah košíku“.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- KROK 2 -->
+                <div class="b2b-step" data-aos="fade-up">
+                    <div class="b2b-step-head">
+                        <div class="b2b-step-num">2</div>
+                        <h3>V Excelu označte zboží a zkopírujte ho</h3>
+                    </div>
+                    <div class="b2b-step-body">
+                        <ol>
+                            <li>Otevřete svůj soubor v Excelu.</li>
+                            <li>Klikněte na první EAN (buňka <strong>A1</strong>), držte levé tlačítko myši
+                                a táhněte dolů a doprava až na <strong>poslední počet kusů</strong>.
+                                Označené buňky zešednou.</li>
+                            <li>Klikněte do označeného místa <strong>PRAVÝM</strong> tlačítkem myši
+                                a zvolte <strong>„Kopírovat“</strong>.<br>
+                                <span class="b2b-soft">(Nebo stiskněte na klávesnici <kbd>Ctrl</kbd> + <kbd>C</kbd>.)</span></li>
+                        </ol>
+                        <figure class="b2b-shot">
+                            <img src="/assets/kosik-2-excel.jpg"
+                                alt="V Excelu jsou označené sloupce A a B a v nabídce pravého tlačítka je zvoleno Kopírovat"
+                                loading="lazy">
+                            <figcaption>Označené jsou oba sloupce — EAN i počet kusů. Pak „Kopírovat“.</figcaption>
+                        </figure>
+                        <div class="b2b-warn"><strong>Pozor na nadpisy a „divná“ čísla</strong>
+                            <p>Máte v prvním řádku nadpisy (např. „EAN“, „ks“)? <strong>Neoznačujte je</strong> —
+                                začněte až prvním EAN.</p>
+                            <p>Vidíte místo EAN něco jako <strong>8,59E+12</strong>? Sloupec je moc úzký.
+                                Dvakrát klikněte na čáru mezi písmeny <strong>A</strong> a <strong>B</strong>
+                                v záhlaví — sloupec se rozšíří a ukáže celé číslo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KROK 3 -->
+                <div class="b2b-step" data-aos="fade-up">
+                    <div class="b2b-step-head">
+                        <div class="b2b-step-num">3</div>
+                        <h3>Vložte seznam do Genexisu</h3>
+                    </div>
+                    <div class="b2b-step-body">
+                        <ol>
+                            <li>Vraťte se do Genexisu k otevřenému oknu <strong>„Vložit obsah košíku“</strong>.</li>
+                            <li>Klikněte <strong>PRAVÝM</strong> tlačítkem myši do bílého políčka
+                                <strong>„Vložte text zde“</strong>.</li>
+                            <li>Zvolte <strong>„Vložit“</strong>.<br>
+                                <span class="b2b-soft">(Nebo klikněte do políčka a stiskněte <kbd>Ctrl</kbd> + <kbd>V</kbd>.)</span></li>
+                        </ol>
+                        <figure class="b2b-shot">
+                            <img src="/assets/kosik-3-vlozit.jpg"
+                                alt="Pravé kliknutí do políčka Vložte text zde a volba Vložit"
+                                loading="lazy">
+                            <figcaption>Pravé tlačítko myši do políčka a „Vložit“.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <!-- KROK 4 -->
+                <div class="b2b-step" data-aos="fade-up">
+                    <div class="b2b-step-head">
+                        <div class="b2b-step-num">4</div>
+                        <h3>Klikněte na „Potvrdit“</h3>
+                    </div>
+                    <div class="b2b-step-body">
+                        <ol>
+                            <li>V políčku teď vidíte svá čísla — vlevo EAN, vpravo počet kusů.</li>
+                            <li>Klikněte na modré tlačítko <strong>„POTVRDIT“</strong>.</li>
+                            <li>Zboží se objeví v košíku. Zkontrolujte ho a <strong>dokončete objednávku
+                                jako obvykle</strong>.</li>
+                        </ol>
+                        <figure class="b2b-shot">
+                            <img src="/assets/kosik-4-potvrdit.jpg"
+                                alt="Okno Vložit obsah košíku s vloženými EAN a počty kusů a tlačítkem Potvrdit"
+                                loading="lazy">
+                            <figcaption>Čísla jsou vložená — stačí kliknout na „Potvrdit“.</figcaption>
+                        </figure>
+                        <div class="b2b-tip"><strong>Hotovo</strong>
+                            <p>Zboží je v košíku. Pokračujte k objednávce stejně, jako když objednáváte běžně.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chyba -->
+                <div class="b2b-step is-error" data-aos="fade-up">
+                    <div class="b2b-step-head">
+                        <div class="b2b-step-num">!</div>
+                        <h3>Objevilo se okno „Nelze načíst obsah košíku“?</h3>
+                    </div>
+                    <div class="b2b-step-body">
+                        <p class="b2b-why">Nic se nestalo, jen Genexis nenašel některé zboží. Do košíku se
+                            proto zatím nevložilo nic.</p>
+                        <figure class="b2b-shot">
+                            <img src="/assets/kosik-5-chyba.jpg"
+                                alt="Chybové okno Nelze načíst obsah košíku se seznamem EAN, které nebyly nalezeny"
+                                loading="lazy">
+                            <figcaption>V okně je vypsáno, který EAN je špatně.</figcaption>
+                        </figure>
+                        <p><strong>Proč se to stane:</strong></p>
+                        <ul class="b2b-list">
+                            <li>EAN je <strong>špatně opsaný</strong> (chybí nebo přebývá číslice), nebo</li>
+                            <li>toto zboží <strong>v Genexisu není</strong> — nemáme ho v nabídce.</li>
+                        </ul>
+                        <p><strong>Co udělat:</strong></p>
+                        <ol>
+                            <li>Klikněte na <strong>„ZAVŘÍT“</strong>.</li>
+                            <li>V Excelu najděte EAN, který byl v okně vypsaný. Opravte ho,
+                                nebo celý řádek smažte.</li>
+                            <li>Zopakujte postup od <strong>kroku 1</strong>.</li>
+                        </ol>
+                        <div class="b2b-tip"><strong>Nevíte si rady s EAN?</strong>
+                            <p>Zavolejte nebo napište — kontakt najdete úplně dole na stránce.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Návod: nenačítá se -->
+        <section class="section b2b-help" id="nenacita-se">
+            <div class="container">
+                <div class="head">
+                    <span class="eyebrow is-centered">Návod 2 · Pomoc s přihlášením</span>
                     <h2>Genexis se nenačítá a jen se točí kolečko?</h2>
                     <p class="b2b-help-sub">
                         Nemusíte být „počítačový typ“ — stačí číst a klikat podle pokynů.

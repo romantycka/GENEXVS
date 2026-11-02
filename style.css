@@ -1859,3 +1859,124 @@ body.home main {
     color: var(--faint);
     font-size: 0.9rem;
 }
+
+/* --- Rozcestník návodů --- */
+.b2b-guides {
+    padding: clamp(3.5rem, 7vw, 5.5rem) 0 0;
+    text-align: center;
+}
+
+.b2b-guides h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    margin-bottom: 2.2rem;
+}
+
+.b2b-guides-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+@media (min-width: 720px) {
+    .b2b-guides-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.b2b-guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.b2b-guide-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.b2b-guide-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+.b2b-guide-card p {
+    color: var(--soft);
+}
+
+.b2b-guide-go {
+    margin-top: auto;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.b2b-help[id] {
+    scroll-margin-top: var(--header-h);
+}
+
+#nenacita-se {
+    border-top: 1px solid var(--line);
+}
+
+/* --- Návod z Excelu --- */
+.b2b-video {
+    max-width: 860px;
+    margin: 0 auto 1.4rem;
+}
+
+.b2b-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #000;
+}
+
+.b2b-video figcaption {
+    margin-top: 0.6rem;
+    color: var(--faint);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.b2b-xls {
+    border-collapse: collapse;
+    margin: 0.8rem 0 1rem;
+    font-size: 0.95rem;
+    background: #fff;
+    color: #0a0a12;
+}
+
+.b2b-xls th,
+.b2b-xls td {
+    border: 1px solid #c8c8c8;
+    padding: 0.35rem 0.9rem;
+}
+
+.b2b-xls th {
+    background: #ececec;
+    font-weight: 600;
+    text-align: center;
+}
+
+.b2b-xls td {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.b2b-step.is-error .b2b-step-num {
+    background: #f0b35b;
+}
+
+.b2b-step-body > p {
+    margin: 1rem 0 0.5rem;
+}
